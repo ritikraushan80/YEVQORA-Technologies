@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* Force dark variants to strictly require an explicit .dark ancestor class, ignoring system dark mode (prefers-color-scheme) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Onest", "Satoshi", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-onest: "Onest", sans-serif;
+}
+
+@layer base {
+  :root {
+    --bg-main: #ffffff;
+    --bg-secondary: #f4f4f5;
+    --bg-surface: #f7f8fa;
+    --bg-card: #ffffff;
+    --border-color: #eee;
+    --text-primary: #111113;
+    --text-secondary: #1f2732;
+    --text-muted: #7d7d7d;
+  }
+
+  .dark {
+    --bg-main: #0c0e14;
+    --bg-secondary: #111113;
+    --bg-surface: #18191f;
+    --bg-card: #151722;
+    --border-color: #27272a;
+    --text-primary: #ffffff;
+    --text-secondary: #e4e4e7;
+    --text-muted: #a1a1aa;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: "Onest", var(--font-sans);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: "Onest", var(--font-sans);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Quantum4U Signature Animations */
+@keyframes heroServiceProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes heroBgPan {
+  0% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes heroMaskRise {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes heroContentFadeUp {
+  0% {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-hero-pan {
+  animation: heroBgPan 6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-mask-rise {
+  animation: heroMaskRise 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-up {
+  animation: heroContentFadeUp 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Quantum4U Interactive Pill Button Styling */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Onest', sans-serif;
+  font-weight: 600;
+  border-radius: 9999px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-pill:hover {
+  transform: translateY(-2px);
+}
+
+.btn-pill:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.btn-pill-dark {
+  background-color: #111113;
+  color: #ffffff;
+  border: 1px solid #111113;
+}
+
+.btn-pill-dark:hover {
+  background-color: #000000;
+  border-color: #000000;
+}
+
+.btn-pill-white {
+  background-color: #ffffff;
+  color: #111113;
+  border: 1px solid #ffffff;
+}
+
+.btn-pill-white:hover {
+  background-color: #f4f4f5;
+  border-color: #f4f4f5;
+}
+
+.btn-pill-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-pill-outline:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Scroll reveal helper */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-section.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0e14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Fluid cursor background layering: ensures fluid simulation stays in the background layer behind text, cards, and buttons */
+#fluid-cursor-canvas {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+#app-root-content {
+  position: relative;
+  z-index: 10;
+  background: transparent;
+}
+
+/* Ensure text headings and paragraphs maintain stacking above fluid */
+h1, h2, h3, h4, h5, h6, p {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure interactive buttons, links, inputs, and pills sit cleanly above the fluid cursor canvas */
+:where(button, a, input, textarea, select, [role="button"], .btn-pill) {
+  position: relative;
+  z-index: 30;
+}
