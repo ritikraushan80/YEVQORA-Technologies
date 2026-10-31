@@ -18,8 +18,9 @@ export default function ContactPage() {
         badgeText=""
         title="Let's Build Your Next Intelligent Product"
         description="Have an idea for an AI-powered website or mobile app, or need a customized quote? Tell us about your project and our team will get back to you."
-        imageSrc="/images/hero-contact-conversation.jpg"
-        imageAlt="Two people having a friendly business conversation across a table"
+        imageSrc="/images/hero-contact-dark.jpg"
+        overlayOpacity={0.3}
+        imageAlt="A hand holding a phone above a laptop, with phone, chat, email and @ contact icons"
       />
 
       {/* Split Contact Card (Obsidian Left + Light Right Form) */}

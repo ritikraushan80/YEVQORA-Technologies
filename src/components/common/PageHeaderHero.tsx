@@ -20,6 +20,8 @@ interface PageHeaderHeroProps {
   backLink?: { href: string; label: string };
   pills?: string[];
   chips?: HeroChip[];
+  /** Strength of the dark layer over the photo (0 to 1). Use less for images that are already dark. */
+  overlayOpacity?: number;
 }
 
 export const PageHeaderHero: React.FC<PageHeaderHeroProps> = ({
@@ -31,6 +33,7 @@ export const PageHeaderHero: React.FC<PageHeaderHeroProps> = ({
   backLink,
   pills,
   chips,
+  overlayOpacity = 0.75,
 }) => {
   return (
     <section style={{ backgroundColor: "#111113" }} className="relative overflow-hidden min-h-[50vh] flex items-center font-['Onest',sans-serif]">
@@ -43,7 +46,7 @@ export const PageHeaderHero: React.FC<PageHeaderHeroProps> = ({
           loading="eager"
         />
         {/* Balanced Obsidian Overlay: protects copy legibility on left while keeping right watermark visual crisp and visible */}
-        <div className="absolute inset-0" style={{ backgroundColor: "rgba(17,17,19,0.75)" }} />
+        <div className="absolute inset-0" style={{ backgroundColor: `rgba(17,17,19,${overlayOpacity})` }} />
 
         {/* Ambient Yevqora Brand Watermark Emblem */}
         <div className="absolute right-[-2%] md:right-[5%] top-1/2 -translate-y-1/2 w-[280px] sm:w-[380px] md:w-[480px] aspect-square opacity-[0.08] pointer-events-none select-none z-0">
