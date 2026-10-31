@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, Smartphone, Apple, Cpu, Shield, Globe, Terminal, Layers } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { AiScene, MobileScene, WebScene } from './CapabilityScenes';
 
 interface ServiceCardData {
   id: string;
@@ -11,7 +12,7 @@ interface ServiceCardData {
   description: string;
   gradientBg: string;
   accentLine: string;
-  icon: React.ReactNode;
+  scene: React.ReactNode;
   tags: string[];
   href: string;
 }
@@ -19,6 +20,30 @@ interface ServiceCardData {
 export const CapabilitiesSection: React.FC = () => {
   // Mouse position state for spotlight effect on cards
   const [mousePos, setMousePos] = useState<{ [key: string]: { x: number; y: number } }>({});
+
+  // Scroll reveal: cards rise from the bottom when the grid enters the viewport
+  const gridRef = useRef<HTMLDivElement>(null);
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === 'undefined') {
+      setRevealed(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setRevealed(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   const handleMouseMove = (id: string, e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -30,53 +55,61 @@ export const CapabilitiesSection: React.FC = () => {
   const services: ServiceCardData[] = [
     {
       id: 'ai-powered',
-      badge: 'Cognitive Tech',
+      badge: 'Smart AI',
       title: 'AI-Powered Solutions',
       description:
-        'Intelligent automation, custom LLM fine-tuning, and machine learning pipelines designed to streamline operations, enhance personalization, and drive measurable enterprise ROI.',
+        'Chatbots, workflow automation and predictive analytics that cut manual work, reveal sharper insights and help your team make faster, smarter decisions.',
       gradientBg: 'bg-[linear-gradient(135deg,#3730A3_0%,#4F46E5_45%,#7C3AED_100%)]',
       accentLine: 'bg-[linear-gradient(135deg,#3730A3_0%,#4F46E5_45%,#7C3AED_100%)]',
-      icon: <Sparkles className="w-14 h-14 text-white/90" />,
-      tags: ['LLM Workflows', 'AutoML', 'Predictive Systems'],
+      scene: <AiScene />,
+      tags: ['Chatbots & LLMs', 'Automation', 'Predictive Analytics'],
       href: '/services#service-smart-ai-solutions',
     },
     {
       id: 'mobile-app-dev',
       badge: 'Android & iOS',
-      title: 'Android and IOS Mobile App Development',
+      title: 'Mobile App Development',
       description:
-        'High-performance native and cross-platform mobile apps for Android and iOS engineered for massive scale, fluid 120Hz interactions, on-device ML, and seamless cloud synchronization.',
+        'Fast, polished Android and iOS apps that feel effortless to use, from first idea to App Store and Google Play launch, with AI features built in where they matter.',
       gradientBg: 'bg-gradient-to-br from-[#10b981] via-[#059669] to-[#047857]',
       accentLine: 'bg-gradient-to-br from-[#10b981] to-[#047857]',
-      icon: <Smartphone className="w-14 h-14 text-white/90" />,
-      tags: ['Kotlin & Swift', 'Offline-First', 'CoreML & TFLite'],
+      scene: <MobileScene />,
+      tags: ['Android', 'iOS', 'Cross-Platform'],
       href: '/services#service-android-app-development',
     },
     {
       id: 'website-development',
-      badge: 'Web Architecture',
+      badge: 'Web Platforms',
       title: 'Website Development',
       description:
-        'High-throughput enterprise websites, serverless web architectures, and interactive digital experiences engineered with Next.js, React, and modern microservices with sub-second page loads.',
+        'Modern, lightning-fast websites and web platforms that look sharp on every device, rank well on search and turn visitors into customers.',
       gradientBg: 'bg-gradient-to-br from-[#0891b2] via-[#0284c7] to-[#1e40af]',
       accentLine: 'bg-gradient-to-br from-[#06b6d4] to-[#0284c7]',
-      icon: <Globe className="w-14 h-14 text-white/90" />,
-      tags: ['Next.js & React', 'Edge CDN', 'Headless APIs'],
+      scene: <WebScene />,
+      tags: ['Next.js & React', 'SEO-Ready', 'Scalable Backends'],
       href: '/services#service-website-development',
     },
   ];
 
   return (
-    <section id="services" className="relative w-full bg-transparent py-[clamp(56px,7vw,100px)] transition-colors duration-300">
-      <div className="max-w-[1440px] mx-auto px-[clamp(20px,4vw,64px)] w-full">
-        
+    <section id="services" className="relative w-full bg-transparent pt-[clamp(56px,7vw,100px)] pb-0 transition-colors duration-300">
+      <div className="absolute inset-x-0 top-0 h-[420px] pointer-events-none overflow-hidden" aria-hidden="true">
+        <div className="absolute left-[8%] top-[-120px] size-[360px] rounded-full bg-indigo-300/20 blur-3xl" />
+        <div className="absolute right-[6%] top-[-80px] size-[320px] rounded-full bg-sky-300/20 blur-3xl" />
+      </div>
+      <div className="relative max-w-[1440px] mx-auto px-[clamp(20px,4vw,64px)] w-full">
+
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-[52px]">
-          <div className="font-['Onest',sans-serif] font-semibold text-[13.5px] tracking-[2px] uppercase text-[#7d7d7d] dark:text-zinc-400 mb-[14px]">
+          <div className="inline-flex items-center gap-[8px] rounded-full border border-indigo-200/70 bg-indigo-50/80 px-[14px] py-[6px] font-['Onest',sans-serif] font-semibold text-[12px] tracking-[2px] uppercase text-indigo-600 mb-[16px]">
+            <span className="size-[6px] rounded-full bg-indigo-500 animate-pulse" />
             What We Do
           </div>
           <h2 className="font-['Onest',sans-serif] font-bold text-[28px] sm:text-[38px] md:text-[46px] leading-[1.12] tracking-[-0.02em] text-[#111113] dark:text-white mb-[14px]">
-            Services for Growth
+            Services for{' '}
+            <span className="bg-gradient-to-r from-indigo-600 via-violet-500 to-sky-500 bg-clip-text text-transparent">
+              Growth
+            </span>
           </h2>
           <p className="font-['Onest',sans-serif] font-normal text-[15.5px] md:text-[17px] leading-[1.65] text-[#7d7d7d] dark:text-zinc-300 max-w-[620px] m-0">
             We provide expert digital solutions designed to accelerate your business growth, ensure technical resilience, and maximize ROI.
@@ -84,12 +117,18 @@ export const CapabilitiesSection: React.FC = () => {
         </div>
 
         {/* 3 Interactive Spotlight Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] lg:gap-[30px] items-stretch">
-          {services.map((item) => {
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-[24px] lg:gap-[30px] items-stretch">
+          {services.map((item, index) => {
             const pos = mousePos[item.id] || { x: 200, y: 150 };
             return (
               <div
                 key={item.id}
+                className={`h-full transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transition-none motion-reduce:opacity-100 motion-reduce:translate-y-0 ${
+                  revealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-[80px]'
+                }`}
+                style={{ transitionDelay: revealed ? `${index * 160}ms` : '0ms' }}
+              >
+              <div
                 onMouseMove={(e) => handleMouseMove(item.id, e)}
                 className="group relative h-full rounded-[24px] md:rounded-[28px] transition-transform duration-300 hover:-translate-y-[4px]"
                 style={
@@ -115,6 +154,44 @@ export const CapabilitiesSection: React.FC = () => {
                   <div
                     className={`relative h-[260px] md:h-[290px] flex items-center justify-center overflow-hidden ${item.gradientBg}`}
                   >
+                    {/* Dot pattern + glow orbs */}
+                    <div
+                      className="absolute inset-0 opacity-25 pointer-events-none"
+                      style={{
+                        backgroundImage: 'radial-gradient(rgba(255,255,255,0.9) 1px, transparent 1px)',
+                        backgroundSize: '22px 22px',
+                        maskImage: 'radial-gradient(circle at 50% 50%, black 20%, transparent 75%)',
+                        WebkitMaskImage: 'radial-gradient(circle at 50% 50%, black 20%, transparent 75%)',
+                      }}
+                    />
+                    <div className="absolute -top-[40px] -left-[40px] size-[160px] rounded-full bg-white/25 blur-3xl pointer-events-none" />
+                    <div className="absolute -bottom-[50px] -right-[30px] size-[180px] rounded-full bg-black/25 blur-3xl pointer-events-none" />
+
+                    {/* Drifting glow */}
+                    <div className="absolute left-[18%] bottom-[10%] size-[120px] rounded-full bg-white/20 blur-2xl glow-drift pointer-events-none" />
+
+                    {/* Rising particles */}
+                    <div className="absolute inset-x-0 bottom-0 h-[10px] pointer-events-none" aria-hidden="true">
+                      {[8, 22, 36, 52, 66, 80, 92].map((left, i) => (
+                        <span
+                          key={left}
+                          className="particle absolute bottom-0 rounded-full bg-white/80"
+                          style={{
+                            left: `${left}%`,
+                            width: i % 3 === 0 ? 5 : 3,
+                            height: i % 3 === 0 ? 5 : 3,
+                            animationDelay: `${i * 0.85}s`,
+                            animationDuration: `${5 + (i % 4)}s`,
+                          }}
+                        />
+                      ))}
+                    </div>
+
+                    {/* Shimmer sweep */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                      <div className="shimmer-sweep absolute inset-y-0 left-0 w-[40%] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                    </div>
+
                     {/* Soft White Top Vignette */}
                     <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-black/25 pointer-events-none" />
 
@@ -127,14 +204,9 @@ export const CapabilitiesSection: React.FC = () => {
                       }}
                     />
 
-                    {/* Outer Concentric Animated Radar Rings */}
-                    <div className="absolute w-[320px] h-[320px] rounded-full border border-white/15 animate-[spin_60s_linear_infinite]" />
-                    <div className="absolute w-[240px] h-[240px] rounded-full border border-white/20" />
-                    <div className="absolute w-[160px] h-[160px] rounded-full border border-white/25" />
-
-                    {/* Center Glassmorphic Floating Orb */}
-                    <div className="relative z-10 w-[96px] h-[96px] rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-2xl transition-transform duration-500 group-hover:scale-110">
-                      {item.icon}
+                    {/* Animated scene */}
+                    <div className="relative z-10 mt-[26px] origin-center scale-[0.72] sm:scale-100 md:scale-[0.58] lg:scale-[0.76] xl:scale-[0.92] 2xl:scale-100 transition-transform duration-500">
+                      {item.scene}
                     </div>
 
                     {/* Floating Pill Tag Badge */}
@@ -142,18 +214,6 @@ export const CapabilitiesSection: React.FC = () => {
                       <span className="font-['Onest',sans-serif] text-[11px] font-semibold tracking-wider uppercase px-3 py-1 rounded-full bg-black/40 text-white backdrop-blur-md border border-white/20">
                         {item.badge}
                       </span>
-                    </div>
-
-                    {/* Left Small Floating Micro-Badge */}
-                    <div className="absolute bottom-[20px] left-[24px] z-10 hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/20 backdrop-blur-md border border-white/25 text-white text-[12px] font-medium">
-                      <Cpu className="w-3.5 h-3.5 text-white/90" />
-                      <span>{item.tags[0]}</span>
-                    </div>
-
-                    {/* Right Small Floating Micro-Badge */}
-                    <div className="absolute bottom-[20px] right-[24px] z-10 hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/20 backdrop-blur-md border border-white/25 text-white text-[12px] font-medium">
-                      <Shield className="w-3.5 h-3.5 text-white/90" />
-                      <span>{item.tags[1]}</span>
                     </div>
                   </div>
 
@@ -170,8 +230,25 @@ export const CapabilitiesSection: React.FC = () => {
                       </p>
                     </div>
 
-                    {/* Bottom Dynamic Gradient Accent Line */}
-                    <div className="w-full pt-4">
+                    {/* Tags + Learn more + accent line */}
+                    <div className="w-full pt-4 flex flex-col items-center gap-[14px]">
+                      <div className="flex flex-wrap justify-center gap-[6px]">
+                        {item.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="font-['Onest',sans-serif] text-[11.5px] font-medium px-[10px] py-[4px] rounded-full bg-[#f4f5f8] text-[#5a6470] border border-[#eceef2]"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <Link
+                        href={item.href}
+                        className="inline-flex items-center gap-[6px] font-['Onest',sans-serif] font-semibold text-[13.5px] text-indigo-600 no-underline group-hover:gap-[10px] transition-all duration-300"
+                      >
+                        <span>Learn more</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
                       <div
                         className={`h-[3px] w-full rounded-full ${item.accentLine} opacity-40 group-hover:opacity-100 transition-opacity duration-300`}
                       />
@@ -180,6 +257,7 @@ export const CapabilitiesSection: React.FC = () => {
 
                 </div>
 
+              </div>
               </div>
             );
           })}

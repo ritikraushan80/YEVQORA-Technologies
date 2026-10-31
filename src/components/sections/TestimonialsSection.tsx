@@ -1,161 +1,93 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import React from 'react';
+import Link from 'next/link';
+import { MessageSquareText, ShieldCheck, LifeBuoy, ArrowRight } from 'lucide-react';
 
-interface Testimonial {
-  id: number;
+interface Promise {
+  icon: React.ReactNode;
+  title: string;
   text: string;
-  author: string;
-  role: string;
-  company: string;
-  avatar: string;
+  accent: string;
 }
 
+/**
+ * Replaces the earlier testimonials carousel. We are a new company and have no
+ * client reviews yet, so this section states what clients can expect instead.
+ */
 export const TestimonialsSection: React.FC = () => {
-  const testimonials: Testimonial[] = [
+  const promises: Promise[] = [
     {
-      id: 1,
-      text:
-        'Yevqora transformed our entire cloud and mobile stack. Their AI integration is phenomenal and has completely streamlined our enterprise workflow while reducing server overhead by 40%.',
-      author: 'Faisal Yahya Al-Dhafar',
-      role: 'VP of Technology',
-      company: 'Logistics Group',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200',
+      icon: <MessageSquareText className="w-6 h-6" />,
+      title: 'Clear, honest communication',
+      text: 'You get a straightforward plan, a realistic timeline and regular demos. If something changes, you hear it from us first.',
+      accent: 'from-indigo-500 to-sky-400',
     },
     {
-      id: 2,
-      text:
-        'The mobile application built by Yevqora has delivered a world-class experience for our 2M+ active monthly users. The attention to detail in animations, responsiveness, and zero-latency backend is unmatched.',
-      author: 'Sarah Jenkins',
-      role: 'Head of Product',
-      company: 'FinScale Payments',
-      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200',
+      icon: <ShieldCheck className="w-6 h-6" />,
+      title: 'Quality and security built in',
+      text: 'Clean, well-tested code and sensible security practices from day one, so your product is solid before it reaches your users.',
+      accent: 'from-sky-500 to-teal-400',
     },
     {
-      id: 3,
-      text:
-        'Our SOC2 and HIPAA audit preparedness was completed in record time thanks to Yevqora SecOps blueprint. Highly recommended for any serious, scaling enterprise.',
-      author: 'Michael Chen',
-      role: 'Chief Information Security Officer',
-      company: 'CloudHealth Global',
-      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200',
+      icon: <LifeBuoy className="w-6 h-6" />,
+      title: 'Support after launch',
+      text: 'We stay with you once you go live, fixing issues, improving features and helping your product grow.',
+      accent: 'from-violet-500 to-fuchsia-400',
     },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const prevSlide = () => {
-    setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-  };
-
   return (
-    <section id="testimonials" className="relative w-full bg-[#111113] py-[clamp(56px,7vw,100px)] overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-[clamp(20px,4vw,64px)] w-full flex flex-col gap-[40px] items-center">
-        
+    <section id="testimonials" className="relative w-full bg-brand-dark py-[clamp(56px,7vw,100px)] overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute left-[10%] -top-[120px] size-[340px] rounded-full bg-indigo-500/15 blur-3xl" />
+        <div className="absolute right-[8%] -bottom-[120px] size-[320px] rounded-full bg-sky-500/15 blur-3xl" />
+      </div>
+
+      <div className="relative max-w-[1440px] mx-auto px-[clamp(20px,4vw,64px)] w-full flex flex-col gap-[44px] items-center">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-[700px]">
+        <div className="flex flex-col items-center text-center max-w-[720px] gap-[14px]">
+          <div className="font-['Onest',sans-serif] font-semibold text-[12px] tracking-[2px] uppercase text-white/45">
+            Our Promise
+          </div>
           <h2 className="font-['Onest',sans-serif] font-bold text-[28px] sm:text-[38px] md:text-[46px] leading-[1.15] tracking-[-0.01em] text-white m-0">
-            Hear why 500k+ customers trust
+            What you can expect when you work with us
           </h2>
+          <p className="font-['Onest',sans-serif] font-normal text-[15.5px] md:text-[16.5px] leading-[1.65] text-white/55 m-0">
+            We are a new team, and we would rather earn your trust with our work than ask for it up front. Here is what we commit to on every project.
+          </p>
         </div>
 
-        {/* Testimonials Carousel Track */}
-        <div className="w-full max-w-[1200px] relative">
-          
-          {/* Navigation Arrows */}
-          <div className="hidden sm:flex items-center justify-between absolute inset-y-0 -left-6 -right-6 pointer-events-none z-20">
-            <button
-              type="button"
-              onClick={prevSlide}
-              className="pointer-events-auto w-[42px] h-[42px] rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center backdrop-blur-md border border-white/15 transition-all shadow-lg cursor-pointer"
-              aria-label="Previous review"
+        {/* Promise cards */}
+        <div className="w-full max-w-[1200px] grid grid-cols-1 md:grid-cols-3 gap-[20px] items-stretch">
+          {promises.map((item) => (
+            <div
+              key={item.title}
+              className="group flex flex-col gap-[18px] bg-white/[0.04] border border-white/[0.12] rounded-[24px] p-[28px] md:p-[32px] hover:bg-white/[0.07] hover:border-white/25 hover:-translate-y-[4px] transition-all duration-300"
             >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button
-              type="button"
-              onClick={nextSlide}
-              className="pointer-events-auto w-[42px] h-[42px] rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center backdrop-blur-md border border-white/15 transition-all shadow-lg cursor-pointer"
-              aria-label="Next review"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
-
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] items-stretch">
-            {testimonials.map((item, idx) => {
-              const isCenter = idx === activeIndex;
-              return (
-                <div
-                  key={item.id}
-                  onClick={() => setActiveIndex(idx)}
-                  className={`relative flex flex-col justify-between gap-[22px] bg-white/[0.04] border rounded-[24px] p-[28px] transition-all duration-300 cursor-pointer ${
-                    isCenter
-                      ? 'border-white/30 shadow-[0_12px_40px_rgba(0,0,0,0.6)] bg-white/[0.07] scale-[1.02]'
-                      : 'border-white/[0.12] hover:border-white/20 opacity-80 hover:opacity-100'
-                  }`}
-                >
-                  {/* Quote Text */}
-                  <p className="font-['Onest',sans-serif] font-normal text-[15px] sm:text-[15.5px] text-center text-white/85 leading-[24px] m-0">
-                    &ldquo;{item.text}&rdquo;
-                  </p>
-
-                  {/* Stars + Author Info */}
-                  <div className="flex flex-col items-center gap-[12px] pt-2">
-                    {/* 5 Stars */}
-                    <div className="flex items-center gap-[4px]">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-3.5 h-3.5 fill-[#f59e0b] text-[#f59e0b]" />
-                      ))}
-                    </div>
-
-                    {/* Author & Avatar */}
-                    <div className="flex items-center gap-[10px]">
-                      <div className="relative rounded-full shrink-0 size-[38px] overflow-hidden border border-white/20">
-                        <img
-                          src={item.avatar}
-                          alt={item.author}
-                          className="absolute inset-0 size-full object-cover"
-                        />
-                      </div>
-                      <div className="flex flex-col text-left">
-                        <span className="font-['Onest',sans-serif] font-bold text-[14px] text-white whitespace-nowrap leading-tight">
-                          {item.author}
-                        </span>
-                        <span className="font-['Onest',sans-serif] font-normal text-[12px] text-white/50 leading-tight">
-                          {item.role} &bull; {item.company}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Indicator Bars / Dots (Quantum4U Style) */}
-          <div className="flex gap-[8px] items-center justify-center pt-[32px]">
-            {testimonials.map((_, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => setActiveIndex(idx)}
-                className={`h-[6px] rounded-full transition-all duration-300 cursor-pointer ${
-                  idx === activeIndex ? 'bg-white w-[32px]' : 'bg-white/25 w-[14px] hover:bg-white/40'
-                }`}
-                aria-label={`Go to slide ${idx + 1}`}
-              />
-            ))}
-          </div>
-
+              <span
+                className={`size-[52px] rounded-[16px] bg-gradient-to-br ${item.accent} flex items-center justify-center text-white shadow-lg`}
+              >
+                {item.icon}
+              </span>
+              <h3 className="font-['Onest',sans-serif] font-bold text-[19px] md:text-[20px] text-white leading-[1.3] m-0">
+                {item.title}
+              </h3>
+              <p className="font-['Onest',sans-serif] font-normal text-[14.5px] md:text-[15px] text-white/60 leading-[24px] m-0">
+                {item.text}
+              </p>
+            </div>
+          ))}
         </div>
 
+        {/* CTA */}
+        <Link
+          href="/contact"
+          className="btn-pill text-[14.5px] px-[28px] py-[12px] text-white bg-white/[0.12] hover:bg-white/[0.22] border border-white/30 backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] group"
+        >
+          <span>Start a conversation</span>
+          <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-200" />
+        </Link>
       </div>
     </section>
   );

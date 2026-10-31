@@ -13,18 +13,12 @@ export const ServicesCtaSection: React.FC = () => {
         <p className="font-['Onest',sans-serif] font-normal text-[15px] md:text-[16px] leading-[1.7] text-[#7d7d7d] max-w-[520px] mx-auto mb-[32px]">
           Tell us about your project and let&apos;s build something great together.
         </p>
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-[12px] max-w-[400px] sm:max-w-none mx-auto">
+        <div className="flex justify-center">
           <Link
             href="/contact"
             className="btn-pill btn-pill-dark text-[14px] px-[26px] py-[11px]"
           >
             Get in touch
-          </Link>
-          <Link
-            href="/solutions"
-            className="btn-pill btn-pill-outline text-[14px] px-[26px] py-[11px] text-[#111113] border-[#d4d4d8] hover:bg-[#111113] hover:text-white hover:border-[#111113]"
-          >
-            View our apps
           </Link>
         </div>
       </div>

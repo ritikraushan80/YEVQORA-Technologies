@@ -6,7 +6,6 @@ import { Footer } from '@/components/layout/Footer';
 import { PageHeaderHero } from '@/components/common/PageHeaderHero';
 import { ContactSection } from '@/components/sections/ContactSection';
 import { FaqSection } from '@/components/sections/FaqSection';
-import { TrustLogosSection } from '@/components/sections/TrustLogosSection';
 
 export default function ContactPage() {
   return (
@@ -16,11 +15,11 @@ export default function ContactPage() {
 
       {/* Quantum4U Header Hero */}
       <PageHeaderHero
-        badgeText="Contact Engineering Desk"
-        title="Let's Begin Your Cloud & Mobile Evolution"
-        description="Have technical questions, architectural specifications, or need a customized quote? Connect directly with our lead solution architects."
-        imageSrc="/images/hero-contact.png"
-        imageAlt="Global Technology Desk"
+        badgeText=""
+        title="Let's Build Your Next Intelligent Product"
+        description="Have an idea for an AI-powered website or mobile app, or need a customized quote? Tell us about your project and our team will get back to you."
+        imageSrc="/images/hero-contact-conversation.jpg"
+        imageAlt="Two people having a friendly business conversation across a table"
       />
 
       {/* Split Quantum4U Contact Card (Obsidian Left + Light Right Form) */}
@@ -28,9 +27,6 @@ export default function ContactPage() {
 
       {/* Frequently Asked Questions */}
       <FaqSection />
-
-      {/* 100M+ Global Apps Ticker Marquee */}
-      <TrustLogosSection />
 
       {/* Footer */}
       <Footer />

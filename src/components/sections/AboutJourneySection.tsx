@@ -10,46 +10,34 @@ interface MilestoneItem {
 
 const milestonesList: MilestoneItem[] = [
   {
-    year: '2016',
-    title: 'Founded Yevqora Technologies',
+    year: '01',
+    title: 'Foundation',
     description:
-      'Started with a vision to build smart mobile applications and scalable digital solutions for millions of users worldwide.',
+      'Yevqora Technologies was founded on a clear mission: to make artificial intelligence practical, accessible and valuable in everyday websites and mobile applications.',
   },
   {
-    year: '2018',
-    title: '10M+ Downloads',
+    year: '02',
+    title: 'Engineering Capability',
     description:
-      'Our utility and productivity platforms crossed 10 million downloads, validating product-market fit.',
+      'We built a core team and a modern engineering stack for high-performance web platforms and native and cross-platform Android and iOS applications, with AI embedded where it adds real value.',
   },
   {
-    year: '2020',
-    title: 'Global Product Expansion',
+    year: '03',
+    title: 'Industry Expertise',
     description:
-      'Scaled products globally and strengthened mobile application performance, cloud infrastructure, and user retention.',
+      'We develop tailored solutions for healthcare, fintech, e-commerce, education, logistics, sports and other sectors, each shaped around the specific needs of the business.',
   },
   {
-    year: '2022',
-    title: 'Enterprise Solutions',
+    year: '04',
+    title: 'Product Delivery',
     description:
-      'Launched enterprise engineering services, partnering with startups and established brands to build custom mobile and web systems.',
+      'Every idea is turned into a production-ready product through clear milestones, regular demos and support after launch.',
   },
   {
-    year: '2023',
-    title: 'AI Innovation & Integration',
+    year: '05',
+    title: 'Vision Ahead',
     description:
-      'Integrated on-device machine learning, neural OCR, and automated LLM workflows to deliver intelligent user experiences.',
-  },
-  {
-    year: '2024',
-    title: '100M+ Active Users',
-    description:
-      'Reached the milestone of 100 million active users across our portfolio of web and mobile software.',
-  },
-  {
-    year: '2026',
-    title: 'Scaling AI Innovation Globally',
-    description:
-      'Continuously expanding AI-powered architectures, global cloud networks, and next-generation software platforms.',
+      'We aim to grow into a trusted global technology partner, helping organisations in every industry innovate with confidence.',
   },
 ];
 
@@ -63,7 +51,7 @@ export const AboutJourneySection: React.FC = () => {
             Our Journey
           </div>
           <h2 className="font-['Onest',sans-serif] font-semibold text-[24px] md:text-[40px] leading-[1.15] tracking-[-0.01em] text-[#1f2732] m-0">
-            Milestones That Define Us
+            Building Yevqora, Step by Step
           </h2>
         </div>
 

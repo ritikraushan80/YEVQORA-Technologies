@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Building, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 interface ContactSectionProps {
   hideHeader?: boolean;
@@ -14,13 +14,61 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeader = fal
     phone: '',
     purpose: '',
     message: '',
+    website: '', // honeypot, must stay empty
   });
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
+
+  // The site is a static export, so the form posts straight to Web3Forms from the browser.
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (sending) return;
+
+    // Honeypot: real visitors never fill this hidden field, bots usually do.
+    if (formData.website) {
+      setSubmitted(true);
+      return;
+    }
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setError('The contact form is not available right now. Please email us at contact@yevqora.com.');
+      return;
+    }
+
+    setSending(true);
+    setError('');
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New enquiry from ${formData.name} — ${formData.purpose}`,
+          from_name: 'Yevqora Website',
+          replyto: formData.email,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Not provided',
+          purpose: formData.purpose,
+          message: formData.message,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data?.success === false) {
+        setError('We could not send your message. Please try again or email contact@yevqora.com.');
+        return;
+      }
+      setSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', purpose: '', message: '', website: '' });
+    } catch {
+      setError('Network error. Please try again or email contact@yevqora.com.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -43,21 +91,21 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeader = fal
         <div className="flex flex-col md:flex-row items-stretch w-full overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0px_10px_60px_rgba(0,0,0,0.12)] border border-[#eee] dark:border-zinc-800">
           
           {/* Left Column: Deep Obsidian Info Panel */}
-          <div className="bg-[#111113] text-white flex flex-col justify-between p-[28px] sm:p-[36px] md:p-[48px] md:w-[420px] shrink-0">
+          <div className="bg-[radial-gradient(ellipse_at_100%_100%,rgba(14,143,168,0.30),transparent_42%),radial-gradient(ellipse_at_0%_0%,rgba(29,58,158,0.34),transparent_42%),linear-gradient(160deg,#030409_0%,#070b1d_50%,#030409_100%)] text-white relative overflow-hidden flex flex-col justify-center gap-[36px] p-[28px] sm:p-[36px] md:p-[48px] md:w-[420px] shrink-0">
             <div>
-              <div className="font-['Onest',sans-serif] font-semibold text-[13.5px] tracking-[1.5px] uppercase text-white/40 mb-[14px]">
+              <div className="font-['Onest',sans-serif] font-semibold text-[13.5px] tracking-[1.5px] uppercase text-white/65 mb-[14px]">
                 Get In Touch
               </div>
               <h3 className="font-['Onest',sans-serif] font-bold text-[26px] md:text-[34px] leading-[1.15] tracking-[-0.01em] text-white mb-[12px] m-0">
                 Let&apos;s Build Something Great
               </h3>
-              <p className="font-['Onest',sans-serif] font-normal text-[14.5px] md:text-[15.5px] leading-[1.65] text-white/55 m-0">
-                Have a project or migration in mind? Fill out the form and our technical architects will respond within 24 hours.
+              <p className="font-['Onest',sans-serif] font-normal text-[14.5px] md:text-[15.5px] leading-[1.65] text-white/80 m-0">
+                Have a website, mobile app or AI project in mind? Fill out the form and our team will get back to you within 24 hours.
               </p>
             </div>
 
             {/* Contact Details List */}
-            <div className="flex flex-col gap-[24px] mt-[40px]">
+            <div className="flex flex-col gap-[24px]">
               
               {/* Office */}
               <div className="flex gap-[16px] items-start">
@@ -68,9 +116,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeader = fal
                   <div className="font-['Onest',sans-serif] font-semibold text-[14.5px] text-white mb-[3px]">
                     Office
                   </div>
-                  <div className="font-['Onest',sans-serif] font-normal text-[13.5px] text-white/50 leading-[20px]">
+                  <div className="font-['Onest',sans-serif] font-normal text-[13.5px] text-white/75 leading-[20px]">
                     Yevqora Technologies Pvt. Ltd.<br />
-                    Cyber City, Tech Park, Gurgaon, India
+                    Noida, Uttar Pradesh, India, 201301
                   </div>
                 </div>
               </div>
@@ -86,7 +134,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeader = fal
                   </div>
                   <a
                     href="mailto:contact@yevqora.com"
-                    className="font-['Onest',sans-serif] font-normal text-[13.5px] text-white/50 hover:text-white transition-colors"
+                    className="font-['Onest',sans-serif] font-normal text-[13.5px] text-white/75 hover:text-white transition-colors"
                   >
                     contact@yevqora.com
                   </a>
@@ -102,23 +150,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeader = fal
                   <div className="font-['Onest',sans-serif] font-semibold text-[14.5px] text-white mb-[3px]">
                     Working Hours
                   </div>
-                  <div className="font-['Onest',sans-serif] font-normal text-[13.5px] text-white/50 leading-[20px]">
+                  <div className="font-['Onest',sans-serif] font-normal text-[13.5px] text-white/75 leading-[20px]">
                     Monday &ndash; Friday: 10:00 AM &ndash; 7:00 PM IST
-                  </div>
-                </div>
-              </div>
-
-              {/* Enterprise Reg */}
-              <div className="flex gap-[16px] items-start">
-                <div className="w-[42px] h-[42px] rounded-[12px] bg-white/[0.08] border border-white/10 flex items-center justify-center shrink-0 mt-[2px] text-white/70">
-                  <Building className="w-5 h-5 text-emerald-400" />
-                </div>
-                <div>
-                  <div className="font-['Onest',sans-serif] font-semibold text-[14.5px] text-white mb-[3px]">
-                    Enterprise Code
-                  </div>
-                  <div className="font-['Onest',sans-serif] font-normal text-[13.5px] text-white/50">
-                    CIN: U72900HR2023PTC112345
                   </div>
                 </div>
               </div>
@@ -145,7 +178,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeader = fal
                   Message Sent Successfully!
                 </h4>
                 <p className="text-sm text-[#7d7d7d] dark:text-zinc-400 max-w-sm">
-                  Thank you for reaching out. One of our lead architects will contact you within 24 hours.
+                  Thank you for reaching out. Our team will get back to you within 24 hours.
                 </p>
                 <button
                   type="button"
@@ -215,8 +248,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeader = fal
                       <option value="AI / ML Solutions">AI / ML Solutions</option>
                       <option value="Android App Development">Android App Development</option>
                       <option value="iOS App Development">iOS App Development</option>
-                      <option value="Enterprise Cloud Orchestration">Enterprise Cloud Orchestration</option>
-                      <option value="Cybersecurity & SOC2 Audit">Cybersecurity & SOC2 Audit</option>
+                      <option value="Website Development">Website Development</option>
+                      <option value="UI/UX Designing">UI/UX Designing</option>
                       <option value="Strategic Partnership">Strategic Partnership</option>
                     </select>
                   </div>
@@ -236,12 +269,34 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeader = fal
                   />
                 </div>
 
+                {/* Honeypot: hidden from people, filled in by bots */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  value={formData.website}
+                  onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                  className="absolute -left-[9999px] w-px h-px opacity-0"
+                />
+
+                {error && (
+                  <div
+                    role="alert"
+                    className="rounded-[12px] border border-rose-200 bg-rose-50 px-[16px] py-[12px] text-[13.5px] text-rose-700"
+                  >
+                    {error}
+                  </div>
+                )}
+
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="btn-pill btn-pill-dark text-[14px] px-[32px] py-[12px] shadow-lg group w-full sm:w-auto"
+                    disabled={sending}
+                    className="btn-pill btn-pill-dark text-[14px] px-[32px] py-[12px] shadow-lg group w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    <span>Send Message</span>
+                    <span>{sending ? 'Sending…' : 'Send Message'}</span>
                     <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform duration-200" />
                   </button>
                 </div>

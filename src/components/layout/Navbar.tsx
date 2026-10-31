@@ -34,7 +34,6 @@ export const Navbar: React.FC<NavbarProps> = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Services', href: '/services' },
-    { name: 'Solutions', href: '/solutions' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -110,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 href="/contact"
                 className={`inline-flex items-center justify-center gap-[8px] font-['Onest',sans-serif] font-semibold rounded-[9999px] no-underline whitespace-nowrap cursor-pointer transition-all duration-200 ease-out hover:-translate-y-[2px] active:translate-y-0 active:scale-[0.98] text-[13.5px] px-[24px] py-[10px] ${
                   scrolled
-                    ? 'bg-[#111113] text-white border border-[#111113] hover:bg-black shadow-[0_2px_10px_rgba(17,17,19,0.15)]'
+                    ? 'bg-[linear-gradient(135deg,#06080f,#0c1a4a_55%,#0a6a86)] text-white border border-white/15 hover:brightness-110 shadow-[0_2px_10px_rgba(17,17,19,0.15)]'
                     : 'bg-white text-[#111113] border border-white hover:bg-white/95 shadow-[0_2px_12px_rgba(255,255,255,0.2)]'
                 }`}
               >

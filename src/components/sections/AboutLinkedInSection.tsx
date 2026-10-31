@@ -3,11 +3,14 @@
 import React from 'react';
 import { ArrowUpRight, Check } from 'lucide-react';
 
+// Replace with the company page URL, e.g. https://www.linkedin.com/company/<your-page>
+const LINKEDIN_URL = 'https://www.linkedin.com';
+
 export const AboutLinkedInSection: React.FC = () => {
   const bulletPoints = [
-    'New product & AI launches',
-    'Open roles before they hit job boards',
-    'Engineering write-ups and case studies',
+    'Product and AI updates',
+    'Tips on AI, websites and mobile apps',
+    'News about our projects and launches',
     'Behind-the-scenes from the team',
   ];
 
@@ -27,10 +30,10 @@ export const AboutLinkedInSection: React.FC = () => {
             </div>
 
             <h2 className="font-['Onest',sans-serif] font-semibold text-[24px] md:text-[38px] leading-[1.2] text-[#111113] mb-[18px]">
-              Follow us on LinkedIn for the latest from the studio.
+              Follow us on LinkedIn for the latest from Yevqora.
             </h2>
             <p className="font-['Onest',sans-serif] font-normal text-[15px] md:text-[16px] text-[#5a6470] leading-[1.7] mb-[24px]">
-              We share product launches, AI experiments, hiring updates, and engineering write-ups — straight from the team that built apps used by 100M+ people.
+              We share product updates, AI ideas and practical tips for building better websites and mobile apps — straight from the Yevqora team.
             </p>
 
             <ul className="flex flex-col gap-[12px] mb-[28px] p-0 list-none">
@@ -48,7 +51,7 @@ export const AboutLinkedInSection: React.FC = () => {
 
             <div className="flex items-center gap-[14px] flex-wrap">
               <a
-                href="https://www.linkedin.com"
+                href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-[8px] font-['Onest',sans-serif] font-semibold text-[14px] text-white bg-[#0a66c2] hover:bg-[#0958ad] px-[24px] py-[12px] rounded-[9999px] no-underline transition-colors shadow-sm"
@@ -59,7 +62,7 @@ export const AboutLinkedInSection: React.FC = () => {
                 <span>Follow on LinkedIn</span>
               </a>
               <a
-                href="https://www.linkedin.com"
+                href={LINKEDIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-[6px] font-['Onest',sans-serif] font-medium text-[14px] text-[#7d7d7d] hover:text-[#111113] no-underline transition-colors"
@@ -73,7 +76,7 @@ export const AboutLinkedInSection: React.FC = () => {
           {/* Right Column: LinkedIn Preview Card (Quantum4U Style) */}
           <div>
             <a
-              href="https://www.linkedin.com"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="relative block bg-white rounded-[20px] overflow-hidden border border-[#e6e9ee] shadow-[0_4px_24px_rgba(15,23,42,0.06)] hover:shadow-[0_12px_40px_rgba(15,23,42,0.1)] hover:-translate-y-[2px] transition-all duration-300 no-underline group"
@@ -103,12 +106,8 @@ export const AboutLinkedInSection: React.FC = () => {
                   Yevqora Technologies
                 </h3>
                 <p className="font-['Onest',sans-serif] font-normal text-[14px] text-[#5a6470] leading-[20px] mb-[14px]">
-                  Mobile & AI product engineering studio · India
+                  AI, web & mobile app development · Noida, India
                 </p>
-                <div className="flex items-center gap-[6px] md:gap-[8px] mb-[20px] text-[13px] text-[#7d7d7d]">
-                  <span className="font-semibold text-[#111113]">15,400+</span>
-                  <span>followers</span>
-                </div>
                 <div className="inline-flex items-center gap-[6px] font-semibold text-[13px] text-[#0a66c2] group-hover:underline">
                   <span>View company on LinkedIn</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />

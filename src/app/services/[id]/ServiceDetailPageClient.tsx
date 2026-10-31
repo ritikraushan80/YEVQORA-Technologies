@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { PageHeaderHero } from '@/components/common/PageHeaderHero';
-import { TrustLogosSection } from '@/components/sections/TrustLogosSection';
 import { servicesData } from '@/data/servicesData';
 import { ArrowRight, CheckCircle2, ShieldCheck, Check } from 'lucide-react';
 
@@ -166,9 +165,6 @@ export function ServiceDetailPageClient({ params }: { params: { id: string } }) 
           </div>
         </div>
       </section>
-
-      {/* 100M+ Ticker Marquee */}
-      <TrustLogosSection />
 
       <Footer />
     </main>

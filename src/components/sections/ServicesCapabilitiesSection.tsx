@@ -9,7 +9,7 @@ import {
   Sparkles,
   Bot,
   Database,
-  Compass,
+  Plug,
 } from 'lucide-react';
 
 interface CapabilityItem {
@@ -20,8 +20,8 @@ interface CapabilityItem {
 
 const capabilities: CapabilityItem[] = [
   {
-    title: 'On-Device ML',
-    desc: 'Deploy TensorFlow Lite and Core ML models that run locally on mobile devices for real-time AI.',
+    title: 'AI on the Phone',
+    desc: 'Smart features that run directly on the phone, such as image recognition and voice, working fast even offline.',
     icon: <Brain className="w-6 h-6 text-[#111113]" />,
   },
   {
@@ -35,8 +35,8 @@ const capabilities: CapabilityItem[] = [
     icon: <Eye className="w-6 h-6 text-[#333333]" />,
   },
   {
-    title: 'Predictive Analytics',
-    desc: 'ML-powered forecasting, user behaviour prediction, and intelligent recommendation engines.',
+    title: 'Smart Predictions',
+    desc: 'Forecasts, usage insights and personalised recommendations that help you make better decisions.',
     icon: <TrendingUp className="w-6 h-6 text-[#444444]" />,
   },
   {
@@ -50,14 +50,14 @@ const capabilities: CapabilityItem[] = [
     icon: <Bot className="w-6 h-6 text-[#1f2732]" />,
   },
   {
-    title: 'Data Pipelines',
-    desc: 'Build scalable data infrastructure for training, fine-tuning, and deploying ML models in production.',
+    title: 'Data Preparation',
+    desc: 'Organise and prepare your data so that AI features work reliably and keep improving over time.',
     icon: <Database className="w-6 h-6 text-[#333333]" />,
   },
   {
-    title: 'AI Strategy',
-    desc: 'End-to-end AI roadmap, feasibility analysis, and technology consulting for AI-first products.',
-    icon: <Compass className="w-6 h-6 text-[#444444]" />,
+    title: 'Web & Mobile Integration',
+    desc: 'Connect AI features to your existing website, app and data through clean APIs, without rebuilding what already works.',
+    icon: <Plug className="w-6 h-6 text-[#444444]" />,
   },
 ];
 
@@ -71,7 +71,7 @@ export const ServicesCapabilitiesSection: React.FC = () => {
             Capabilities
           </div>
           <h2 className="font-['Onest',sans-serif] font-semibold text-[24px] md:text-[40px] leading-[1.15] tracking-[-0.01em] text-[#111113]">
-            We are perfect in
+            What we do best
           </h2>
         </div>
 

@@ -10,7 +10,7 @@ import {
   Building2,
   Tv,
   Sprout,
-  Users,
+  Trophy,
   Wand2,
 } from 'lucide-react';
 
@@ -23,12 +23,12 @@ interface IndustryItem {
 const industries: IndustryItem[] = [
   {
     title: 'AI in Healthcare',
-    desc: 'Diagnostic AI, patient analytics, and intelligent health monitoring systems.',
+    desc: 'AI features for patient apps, appointment tools, health tracking and smart reminders.',
     icon: <HeartPulse className="w-4 h-4 text-white/70" />,
   },
   {
     title: 'AI in FinTech',
-    desc: 'Fraud detection, risk scoring, and AI-powered financial advisory tools.',
+    desc: 'Smart dashboards, spending insights, fraud alerts and AI-assisted customer support for finance apps.',
     icon: <Landmark className="w-4 h-4 text-white/70" />,
   },
   {
@@ -48,7 +48,7 @@ const industries: IndustryItem[] = [
   },
   {
     title: 'AI in Real Estate',
-    desc: 'Property valuation models, smart matching, and AI-powered market analysis.',
+    desc: 'Smart property search, buyer matching and market insights for real estate platforms.',
     icon: <Building2 className="w-4 h-4 text-white/70" />,
   },
   {
@@ -62,20 +62,20 @@ const industries: IndustryItem[] = [
     icon: <Sprout className="w-4 h-4 text-white/70" />,
   },
   {
-    title: 'AI in HR & Recruiting',
-    desc: 'Resume screening, candidate matching, and intelligent workforce analytics.',
-    icon: <Users className="w-4 h-4 text-white/70" />,
+    title: 'AI in Sports',
+    desc: 'Player performance tracking, match analytics, injury-risk prediction, and smart fan engagement.',
+    icon: <Trophy className="w-4 h-4 text-white/70" />,
   },
   {
-    title: 'Custom AI Solutions',
-    desc: 'Bespoke AI models and integrations tailored to your unique business needs.',
+    title: 'Other Industries',
+    desc: "Don't see yours? We build AI features for any kind of business.",
     icon: <Wand2 className="w-4 h-4 text-white/70" />,
   },
 ];
 
 export const ServicesIndustriesSection: React.FC = () => {
   return (
-    <section className="bg-[#111113] font-['Onest',sans-serif]">
+    <section className="bg-brand-dark font-['Onest',sans-serif]">
       <div className="max-w-[1440px] mx-auto px-[clamp(16px,4vw,64px)] py-[clamp(58px,7.2vw,96px)]">
         {/* Section Header (Quantum4U Style) */}
         <div className="max-w-[760px] mb-[clamp(40px,5vw,64px)]">
@@ -83,7 +83,7 @@ export const ServicesIndustriesSection: React.FC = () => {
             Industries
           </div>
           <h2 className="font-['Onest',sans-serif] font-semibold text-[24px] md:text-[40px] leading-[1.15] tracking-[-0.01em] text-white mb-[16px]">
-            Services that help you grow.
+            Industries we build for.
           </h2>
           <p className="font-['Onest',sans-serif] font-normal text-[15px] md:text-[16px] leading-[1.7] text-white/50 m-0">
             We build across diverse industries — each tailored to unique business requirements.

@@ -75,7 +75,7 @@ const industries: IndustryItem[] = [
 
 export const AboutIndustriesSection: React.FC = () => {
   return (
-    <section className="bg-[#111113] font-['Onest',sans-serif]">
+    <section className="bg-brand-dark font-['Onest',sans-serif]">
       <div className="max-w-[1440px] mx-auto px-[clamp(16px,4vw,64px)] py-[clamp(58px,7.2vw,96px)]">
         {/* Section Header (Quantum4U Style) */}
         <div className="max-w-[760px] mb-[clamp(40px,5vw,64px)]">

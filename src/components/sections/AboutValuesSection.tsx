@@ -11,22 +11,22 @@ const valuesList: ValueItem[] = [
   {
     title: 'Innovation',
     description:
-      'We constantly push boundaries to create cutting-edge solutions that empower our users and redefine industry standards.',
+      'We look for practical ways to use new technology, especially AI, so your product feels smarter and easier to use.',
   },
   {
     title: 'Integrity',
     description:
-      'We uphold transparency and honesty in everything we do, building trust with our customers, partners, and team members.',
+      'We are honest about timelines, costs and what is possible, and we tell you early if something changes.',
   },
   {
     title: 'Collaboration',
     description:
-      'Together, we achieve more. By fostering teamwork and encouraging diverse perspectives, we deliver impactful results.',
+      'We work as one team with you, sharing progress openly and welcoming your feedback at every step.',
   },
   {
     title: 'Customer Delight',
     description:
-      'Our customers are at the heart of everything we do. We strive to exceed expectations and create experiences that truly delight.',
+      'We care about the people who will use your product, and we measure our work by how useful it is to them.',
   },
 ];
 

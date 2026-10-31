@@ -3,14 +3,15 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { MapPin, Mail, Building2 } from 'lucide-react';
+import { MapPin, Mail } from 'lucide-react';
+import { FooterSocialLinks } from '@/components/common/SocialLinks';
 
 export const Footer: React.FC = () => {
   return (
     <footer
       id="footer"
       data-no-fluid="true"
-      className="bg-[#111113] w-full text-white relative z-30 overflow-hidden"
+      className="bg-brand-dark w-full text-white relative z-30 overflow-hidden"
     >
       <div className="max-w-[1440px] mx-auto px-[clamp(16px,4vw,64px)] pt-[48px] md:pt-[64px] lg:pt-[80px] pb-[0px]">
         {/* Main Footer Flex / Grid Matching Quantum4U */}
@@ -28,9 +29,10 @@ export const Footer: React.FC = () => {
                 />
               </div>
             </Link>
-            <p className="font-['Onest',sans-serif] font-normal text-[13px] md:text-[14px] text-white/55 leading-[22px] md:leading-[24px] m-0 max-w-[440px]">
-              Award-winning AI, cloud orchestration, web and mobile application engineering studio. Building high-performance digital platforms used by 100M+ users worldwide.
+            <p className="font-['Onest',sans-serif] font-normal text-[13px] md:text-[14px] text-white/55 leading-[22px] md:leading-[24px] m-0 max-w-[440px] text-justify">
+              Yevqora Technologies is a Noida-based software company building AI solutions, cloud systems, and mobile and web applications that help businesses grow with confidence.
             </p>
+            <FooterSocialLinks />
           </div>
 
           {/* Middle Nav Columns: Company, Services, Legal */}
@@ -61,24 +63,6 @@ export const Footer: React.FC = () => {
                   Services
                 </Link>
                 <Link
-                  href="/solutions"
-                  className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
-                >
-                  Our Apps
-                </Link>
-                <Link
-                  href="/solutions"
-                  className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
-                >
-                  Blog
-                </Link>
-                <Link
-                  href="/about"
-                  className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
-                >
-                  Careers
-                </Link>
-                <Link
                   href="/contact"
                   className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
                 >
@@ -94,43 +78,37 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex flex-col gap-[10px] md:gap-[12px]">
                 <Link
-                  href="/services/app-web-dev"
+                  href="/services#service-android-app-development"
                   className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
                 >
                   Android Development
                 </Link>
                 <Link
-                  href="/services/app-web-dev"
+                  href="/services#service-ios-app-development"
                   className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
                 >
                   iOS Development
                 </Link>
                 <Link
-                  href="/services/app-web-dev"
+                  href="/services#service-website-development"
                   className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
                 >
                   Website Development
                 </Link>
                 <Link
-                  href="/services/ai-data"
+                  href="/services#service-smart-ai-solutions"
                   className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
                 >
                   Smart AI Solutions
                 </Link>
                 <Link
-                  href="/services"
+                  href="/services#service-app-ui-ux-designing"
                   className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
                 >
                   UI/UX Designing
                 </Link>
                 <Link
-                  href="/services/cloud-orchestration"
-                  className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
-                >
-                  Enterprise Cloud
-                </Link>
-                <Link
-                  href="/services"
+                  href="/services#service-app-testing-services"
                   className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
                 >
                   App Testing
@@ -145,22 +123,16 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex flex-col gap-[10px] md:gap-[12px]">
                 <Link
-                  href="/about"
+                  href="/privacy"
                   className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
                 >
                   Privacy Policy
                 </Link>
                 <Link
-                  href="/about"
+                  href="/terms"
                   className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
                 >
                   Terms &amp; Conditions
-                </Link>
-                <Link
-                  href="/about"
-                  className="font-['Onest',sans-serif] font-normal text-[13.5px] md:text-[14px] text-white/65 no-underline hover:text-white active:text-white transition-colors py-[2px]"
-                >
-                  EULA
                 </Link>
               </div>
             </div>
@@ -177,7 +149,7 @@ export const Footer: React.FC = () => {
               <div className="flex gap-[10px] items-start">
                 <MapPin className="shrink-0 mt-[3px] text-white/35 w-[14px] h-[14px]" />
                 <span className="font-['Onest',sans-serif] font-normal text-[13px] text-white/55 leading-[20px]">
-                  Cyber City, Tech Park, Gurgaon, India, 122002
+                  Noida, Uttar Pradesh, India, 201301
                 </span>
               </div>
 
@@ -191,14 +163,6 @@ export const Footer: React.FC = () => {
                   contact@yevqora.com
                 </span>
               </a>
-
-              {/* Corporate Registration / CIN */}
-              <div className="flex gap-[10px] items-center">
-                <Building2 className="shrink-0 text-white/35 w-[14px] h-[14px]" />
-                <span className="font-['Onest',sans-serif] font-normal text-[12px] text-white/35">
-                  CIN: U72900HR2023PTC112345
-                </span>
-              </div>
             </div>
           </div>
 

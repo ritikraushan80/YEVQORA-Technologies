@@ -4,7 +4,6 @@ import React from 'react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { PageHeaderHero } from '@/components/common/PageHeaderHero';
-import { AboutStatsSection } from '@/components/sections/AboutStatsSection';
 import { AboutCultureSection } from '@/components/sections/AboutCultureSection';
 import { AboutValuesSection } from '@/components/sections/AboutValuesSection';
 import { AboutJourneySection } from '@/components/sections/AboutJourneySection';
@@ -20,15 +19,12 @@ export default function AboutPage() {
 
       {/* 2. Quantum4U About Header Hero matching https://quantum4u.in/about */}
       <PageHeaderHero
-        badgeText="About Us"
-        title="Building mobile and AI products since 2016."
-        description="Yevqora Technologies is a product engineering studio behind apps trusted by over 100 million users worldwide. We design, build, and scale intelligent mobile experiences with a 4.5-star average rating across global app stores."
-        imageSrc="/images/hero-about.png"
+        badgeText=""
+        title="A young startup building AI-powered websites and mobile apps."
+        description="Yevqora Technologies is an agile product engineering startup building intelligent digital experiences. From on-device AI and scalable web platforms to high-performance mobile apps, we turn bold ideas into market-ready products for healthcare, e-commerce, fintech, education, sports and every industry in between."
+        imageSrc="/images/hero-about-brainstorm.jpg"
         imageAlt="About Yevqora Technologies"
       />
-
-      {/* 3. Stats Metric Bar (100M+ Active Users, 50+ Apps, 4.5+ Rating, 8+ Years) */}
-      <AboutStatsSection />
 
       {/* 4. Work Culture: Welcome to Yevqora — where ideas turn into innovation! */}
       <AboutCultureSection />

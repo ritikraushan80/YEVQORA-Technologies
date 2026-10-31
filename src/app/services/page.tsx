@@ -50,11 +50,11 @@ export default function ServicesPage() {
 
       {/* 2. Quantum4U Header Hero matching https://quantum4u.in/services */}
       <PageHeaderHero
-        badgeText="Services"
+        badgeText=""
         title="Engineering and design services for modern teams."
-        description="From Android and iOS development to AI integrations, full-stack website engineering, and high-performance cloud orchestration, we help founders and brands ship reliable software that performs at scale."
-        imageSrc="/images/hero-services.png"
-        imageAlt="Quantum4U Engineering & Services"
+        description="From Android and iOS apps to AI integrations, modern websites and thoughtful UI/UX design, we help founders and businesses launch reliable, easy-to-use software."
+        imageSrc="/images/hero-services-office.jpg"
+        imageAlt="A modern open-plan office where a team works on laptops"
         chips={serviceChips}
       />
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export interface RelatedApp {
   slug: string;
@@ -29,11 +29,11 @@ export const servicesList: ServiceArticle[] = [
     slug: 'smart-ai-solutions',
     title: 'Smart AI Solutions',
     accent: '#f59e0b',
-    image: '/images/services/smart-ai-solutions.png',
+    image: '/images/services/smart-ai-solutions.jpg',
     description:
-      'We design and deploy end-to-end AI systems — from custom machine learning models and NLP pipelines to computer vision, generative AI integrations, and intelligent automation. Our AI solutions are built to solve real business problems, not just add buzzwords.',
+      "We design and build practical AI features, from chatbots and workflow automation to recommendations, document processing and predictive analytics, that solve real business problems and fit into the products you already run.",
     detail:
-      "Whether it's building recommendation engines, training custom classification models, implementing RAG-based chatbots, or deploying predictive analytics dashboards — we architect AI solutions that integrate seamlessly into your existing products and workflows using TensorFlow, PyTorch, OpenAI APIs, and LangChain.",
+      "Whether it's a smart assistant for your customers, a recommendation engine or a dashboard that forecasts demand, we integrate AI into your website or app using proven tools such as OpenAI APIs, TensorFlow and LangChain, and keep it simple to use and easy to maintain.",
     relatedApps: [
       {
         slug: 'teleprompter-ai-script-prompt',
@@ -63,11 +63,11 @@ export const servicesList: ServiceArticle[] = [
     slug: 'android-app-development',
     title: 'Android App Development',
     accent: '#3ddc84',
-    image: '/images/services/android-app-development.png',
+    image: '/images/services/android-app-development.jpg',
     description:
-      'We build Android applications enhanced with on-device AI from smart content recommendations and intelligent automation to real-time image recognition and predictive user experiences. Every app we ship leverages machine learning to deliver personalized, adaptive experiences at scale.',
+      "We build fast, polished Android apps with Kotlin and cross-platform tools, from the first idea to your Google Play launch, adding AI features such as smart recommendations, image recognition and voice where they genuinely help your users.",
     detail:
-      'Our Android team integrates TensorFlow Lite, MediaPipe, and custom ML models directly into apps for features like AI-powered call identification, smart photo detection, voice-driven interfaces, and behaviour-based personalization — all running efficiently on-device without cloud dependency.',
+      "Our Android work covers clean interfaces, offline support, push notifications, secure logins and payments, plus on-device or cloud AI using TensorFlow Lite and similar tools, all tested on a range of devices before release.",
     relatedApps: [
       {
         slug: 'call-recorder-automatic-acr',
@@ -97,11 +97,11 @@ export const servicesList: ServiceArticle[] = [
     slug: 'ios-app-development',
     title: 'iOS App Development',
     accent: '#007aff',
-    image: '/images/services/ios-app-development.png',
+    image: '/images/services/ios-app-development.jpg',
     description:
-      "Our iOS apps combine Apple's Core ML and Vision frameworks with custom AI pipelines to deliver intelligent experiences — from on-device NLP and smart assistants to real-time object detection and AI-driven personalization that adapts to each user.",
+      "We build smooth, native-feeling iPhone and iPad apps with Swift and SwiftUI, from design to App Store launch, with AI features such as smart assistants, text and image understanding and personalization where they add value.",
     detail:
-      "We leverage Apple's Neural Engine, CreateML, and Swift-native ML integrations to build apps with features like intelligent document scanning, AI-based health tracking, predictive analytics, and natural language understanding — all optimized for iPhone and iPad performance.",
+      "We use Apple's Core ML, Vision and Create ML frameworks together with cloud AI services to add features like document scanning, smart search and predictive insights, while following Apple's design and privacy guidelines.",
     relatedApps: [
       {
         slug: 'language-translator-translate',
@@ -131,11 +131,11 @@ export const servicesList: ServiceArticle[] = [
     slug: 'website-development',
     title: 'Website Development',
     accent: '#06b6d4',
-    image: '/images/services/website-development.png',
+    image: '/images/services/website-development.jpg',
     description:
-      'High-throughput enterprise websites, serverless web architectures, and interactive digital experiences engineered with Next.js, React, and modern microservices.',
+      "Modern, fast and responsive websites and web apps built with Next.js and React, designed to look sharp on every device, rank well in search and turn visitors into customers.",
     detail:
-      'Every web application ships with sub-second page loads, Lighthouse 98+ scores, automated global CDN edge caching, and conversion-optimized responsive design built to handle millions of daily visits.',
+      "We focus on speed, clean design, accessibility and SEO from day one, and can add AI chatbots, smart search and secure back ends as your product grows.",
     relatedApps: [
       {
         slug: 'pdf-pilot',
@@ -165,11 +165,11 @@ export const servicesList: ServiceArticle[] = [
     slug: 'app-ui-ux-designing',
     title: 'App UI/UX Designing',
     accent: '#7c3aed',
-    image: '/images/services/app-ui-ux-designing.png',
+    image: '/images/services/app-ui-ux-designing.jpg',
     description:
-      'We design intelligent interfaces that adapt to user behaviour — leveraging AI-powered analytics, heatmap-driven insights, and generative design tools to create experiences that are not just beautiful, but data-informed and continuously optimized.',
+      "We design clear, intuitive app and website interfaces, from wireframes and prototypes to final visuals, so your product is easy to use and enjoyable. We can also use AI-assisted tools to speed up research and explore design ideas.",
     detail:
-      'Our design process uses AI to analyse user flows, predict drop-off points, and generate design variations. We combine tools like Figma with AI-assisted prototyping to deliver interfaces that learn from real user data and evolve with your product.',
+      "Our process covers user flows, wireframes, interactive prototypes in Figma, usability feedback and a design system your developers can build from.",
     relatedApps: [],
   },
   {
@@ -177,11 +177,11 @@ export const servicesList: ServiceArticle[] = [
     slug: 'app-testing-services',
     title: 'App Testing Services',
     accent: '#10b981',
-    image: '/images/services/app-testing-services.png',
+    image: '/images/services/app-testing-services.jpg',
     description:
-      'We use AI-powered testing frameworks to catch bugs faster, predict failure points, and automate regression testing at scale. Our intelligent QA approach reduces release cycles while improving app stability and user satisfaction.',
+      "We test websites and mobile apps to catch bugs before your users do, combining manual testing with automated checks, and using AI-assisted tools where they speed up regression testing.",
     detail:
-      'Our continuous integration test matrix simulates real-world stress, network latency, device fragmentation, and concurrency spikes across hundreds of physical devices to guarantee zero critical regressions.',
+      "Our testing covers functionality, usability, performance, compatibility across devices and browsers, and security basics, with clear bug reports and retesting after every fix.",
     relatedApps: [],
   },
 ];
@@ -199,7 +199,7 @@ export const ServicesPracticesSection: React.FC = () => {
             One team. Many practices.
           </h2>
           <p className="font-['Onest',sans-serif] font-normal text-[15px] md:text-[16px] leading-[1.7] text-[#5a6470] m-0">
-            Pick the one closest to your problem — or combine them. Every engagement ships AI-aware from day one.
+            Pick the one closest to your problem, or combine them. We add AI only where it genuinely helps.
           </p>
         </div>
 
@@ -274,51 +274,6 @@ export const ServicesPracticesSection: React.FC = () => {
                     )}
                   </div>
 
-                  {/* Shipped Apps (Only if service has shipped apps) */}
-                  {service.relatedApps && service.relatedApps.length > 0 && (
-                    <div className="mb-[32px] pt-[24px] border-t border-[#f0f0f0]">
-                      <div className="font-['Onest',sans-serif] font-medium text-[11px] tracking-[1.5px] uppercase text-[#7d7d7d] mb-[16px]">
-                        Apps we&apos;ve shipped
-                      </div>
-                      <div className="grid grid-cols-3 gap-[10px] md:gap-[12px]">
-                        {service.relatedApps.map((app) => (
-                          <Link
-                            key={app.slug}
-                            href="/solutions"
-                            className="group/app flex flex-col items-center text-center bg-white hover:bg-[#fafbfc] border border-[#eef0f3] hover:border-[#111113]/15 hover:-translate-y-[2px] rounded-[16px] p-[14px] md:p-[16px] no-underline transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.02)]"
-                          >
-                            <div className="w-[56px] h-[56px] md:w-[64px] md:h-[64px] rounded-[14px] overflow-hidden shrink-0 bg-[#f7f8fa] border border-[#eef0f3] shadow-[0_2px_8px_rgba(0,0,0,0.04)] mb-[12px] group-hover/app:scale-105 transition-transform">
-                              {app.icon ? (
-                                <img
-                                  src={app.icon}
-                                  alt={app.name}
-                                  className="size-full object-cover"
-                                  referrerPolicy="no-referrer"
-                                />
-                              ) : (
-                                <div className="size-full flex items-center justify-center font-['Onest',sans-serif] font-bold text-[22px] text-[#7d7d7d]">
-                                  {app.name.charAt(0)}
-                                </div>
-                              )}
-                            </div>
-                            <span className="font-['Onest',sans-serif] font-semibold text-[13px] text-[#111113] leading-[1.25] line-clamp-2 mb-[4px] w-full">
-                              {app.name}
-                            </span>
-                            <span className="font-['Onest',sans-serif] text-[11px] text-[#7d7d7d] leading-[1.4] line-clamp-1 mb-[8px] w-full">
-                              {app.category}
-                            </span>
-                            {app.rating && Number(app.rating) > 0 && (
-                              <span className="font-['Onest',sans-serif] font-medium text-[11.5px] text-[#1f2732] leading-[1.4] flex items-center gap-[4px]">
-                                <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
-                                <span>{app.rating}</span>
-                              </span>
-                            )}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
                   {/* Actions Row */}
                   <div className="flex items-center gap-[20px] flex-wrap pt-2">
                     <Link
@@ -329,14 +284,6 @@ export const ServicesPracticesSection: React.FC = () => {
                       <span>Start a project</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
-                    {service.relatedApps && service.relatedApps.length > 0 && (
-                      <Link
-                        href="/solutions"
-                        className="inline-flex items-center gap-[6px] font-['Onest',sans-serif] font-medium text-[13px] text-[#7d7d7d] hover:text-[#111113] no-underline transition-colors"
-                      >
-                        See all apps
-                      </Link>
-                    )}
                   </div>
                 </div>
               </article>

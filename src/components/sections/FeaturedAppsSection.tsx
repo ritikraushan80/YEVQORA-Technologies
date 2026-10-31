@@ -99,7 +99,7 @@ export const FeaturedAppsSection: React.FC = () => {
 
         {/* Flagship Hero App Card (Quantum4U Style) */}
         <div className="w-full max-w-[1376px]">
-          <div className="bg-[#111113] text-white flex flex-col md:flex-row items-stretch overflow-hidden rounded-[24px] md:rounded-[32px] relative md:aspect-[3/1] shadow-2xl border border-white/10 group">
+          <div className="bg-brand-dark text-white flex flex-col md:flex-row items-stretch overflow-hidden rounded-[24px] md:rounded-[32px] relative md:aspect-[3/1] shadow-2xl border border-white/10 group">
             {/* Background Graphic with Vignette */}
             <div className="absolute inset-0 pointer-events-none">
               <img

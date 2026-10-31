@@ -5,9 +5,9 @@ import { Check } from 'lucide-react';
 
 export const AboutCultureSection: React.FC = () => {
   const highlights = [
-    'Remarkable to receive such a personalized touch in every solution we offer.',
-    'Empowering innovation while ensuring reliability in every project we undertake.',
-    'Transforming challenges into opportunities with groundbreaking AI-driven tools.',
+    'AI built into websites and mobile apps, so they feel smarter and easier to use.',
+    'Solutions for every industry, including healthcare, fintech, e-commerce, education, logistics and sports.',
+    'A small, focused team that gives every client direct attention and honest communication.',
   ];
 
   return (
@@ -17,13 +17,13 @@ export const AboutCultureSection: React.FC = () => {
           {/* Left Text Column */}
           <div className="flex-1">
             <div className="font-semibold text-[12px] text-[#7d7d7d] tracking-[2px] uppercase mb-[16px]">
-              Work Culture
+              Who We Are
             </div>
             <h2 className="font-['Onest',sans-serif] font-semibold text-[24px] md:text-[38px] leading-[1.2] text-[#1f2732] mb-[20px]">
-              Welcome to Yevqora — where ideas turn into innovation!
+              Who we are — a startup turning ideas into intelligent products.
             </h2>
             <p className="font-['Onest',sans-serif] font-normal text-[15px] leading-[1.7] text-[#7d7d7d] mb-[24px]">
-              At Yevqora Technologies, we work hard & party harder. Our work culture is flexible and our team is encouraged to plan their day & work how they like. Collaboration & building a sense of teamwork is a crucial principle. Besides, Yevqora is a fun place to work where work doesn&apos;t feel like work.
+              Yevqora Technologies is a new company with big goals. We combine modern web and mobile engineering with practical AI to help businesses launch faster and serve their customers better. We work with businesses in every industry, from healthcare and finance to retail, education and sports. Being young means we move quickly, listen closely and care about every project we take on.
             </p>
 
             <div className="flex flex-col gap-[14px]">
@@ -44,8 +44,8 @@ export const AboutCultureSection: React.FC = () => {
           <div className="flex-1 flex justify-center w-full">
             <div className="w-full max-w-[460px] aspect-square bg-gradient-to-br from-[#1f2732] to-[#111113] rounded-[32px] flex items-center justify-center overflow-hidden shadow-2xl">
               <img
-                src="/images/work-culture.png"
-                alt="Work culture at Yevqora"
+                src="/images/work-culture-desk.jpg"
+                alt="A developer workspace with code on screen"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>

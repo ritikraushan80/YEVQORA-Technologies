@@ -7,33 +7,33 @@ import { FaqItem } from '@/types';
 export const faqData: FaqItem[] = [
   {
     id: 'faq-1',
-    question: 'What does the typical onboarding migration timeline look like?',
+    question: 'What services does Yevqora Technologies offer?',
     answer:
-      'Depending on node volume and multi-cloud dependencies, standard migrations are modeled, staged, and fully deployed within 2 to 4 weeks with zero active systems downtime.',
+      'We build AI-powered websites, Android and iOS mobile apps, and custom AI solutions, along with UI/UX design and app testing, for businesses in every industry.',
   },
   {
     id: 'faq-2',
-    question: 'Are Yevqora platforms fully compliant with SOC2 and HIPAA standards?',
+    question: 'How long does a typical project take?',
     answer:
-      'Yes, both our FinTech Core and HealthHub platforms are pre-certified and undergo continuous automated posture audits mapped instantly to security directives.',
+      'It depends on scope. A website or small app can take a few weeks, while larger AI-driven platforms take longer. After a short discovery call we share a clear timeline and milestones.',
   },
   {
     id: 'faq-3',
-    question: 'Can we run Yevqora systems on our own bare-metal servers?',
+    question: 'Which industries do you work with?',
     answer:
-      'Absolutely. Our Orchestration architecture deployment natively hooks into physical nodes as easily as standard public cloud nodes with secure mutual TLS protection.',
+      'We work across healthcare, fintech, e-commerce, education, logistics, sports and more, tailoring each solution to the needs of the business.',
   },
   {
     id: 'faq-4',
-    question: 'What SLA response guarantees do you provide for enterprise support?',
+    question: 'How do I get started with a project?',
     answer:
-      'We provide 24/7 dedicated engineering support with sub-15 minute response SLAs for tier-1 critical inquiries and direct access to senior solution architects.',
+      'Send us a message through the contact form with a short description of your idea. We will respond within 24 hours to schedule a discussion and prepare a quote.',
   },
   {
     id: 'faq-5',
-    question: 'How do you ensure zero downtime during high-load app migrations?',
+    question: 'Do you provide support after launch?',
     answer:
-      'We use progressive blue-green routing and automated traffic mirroring. Real workloads are validated in staging before production DNS pointers shift with sub-millisecond failover.',
+      'Yes. We offer maintenance, updates and ongoing support after launch so your product keeps performing as your business grows.',
   },
 ];
 
@@ -57,7 +57,7 @@ export const FaqSection: React.FC = () => {
             Got Questions? We Have Answers.
           </h2>
           <p className="font-normal text-[15.5px] text-[#7d7d7d] dark:text-zinc-400 mt-2 max-w-lg mx-auto">
-            Everything you need to know about our engineering processes, enterprise SLAs, and security standards.
+            Everything you need to know about our services, process and how to get started.
           </p>
         </div>
 

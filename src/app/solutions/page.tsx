@@ -4,8 +4,6 @@ import React from 'react';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { PageHeaderHero } from '@/components/common/PageHeaderHero';
-import { FeaturedAppsSection } from '@/components/sections/FeaturedAppsSection';
-import { TrustLogosSection } from '@/components/sections/TrustLogosSection';
 import { SolutionsSection } from '@/components/sections/SolutionsSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 
@@ -23,12 +21,6 @@ export default function SolutionsPage() {
         imageSrc="/images/hero-solutions.png"
         imageAlt="Packaged Industry Frameworks"
       />
-
-      {/* Flagship App + 6-Grid Square Apps (Quantum4U Style) */}
-      <FeaturedAppsSection />
-
-      {/* 100M+ Global Apps Ticker Marquee */}
-      <TrustLogosSection />
 
       {/* Industry Enterprise Frameworks & Matrix */}
       <SolutionsSection hideHeader={false} />

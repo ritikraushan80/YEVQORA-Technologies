@@ -33,7 +33,7 @@ export const PageHeaderHero: React.FC<PageHeaderHeroProps> = ({
   chips,
 }) => {
   return (
-    <section className="relative overflow-hidden min-h-[50vh] flex items-center bg-[#111113] font-['Onest',sans-serif]">
+    <section style={{ backgroundColor: "#111113" }} className="relative overflow-hidden min-h-[50vh] flex items-center font-['Onest',sans-serif]">
       {/* Full-bleed Background Image with Quantum4U Dark Obsidian Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
@@ -43,7 +43,7 @@ export const PageHeaderHero: React.FC<PageHeaderHeroProps> = ({
           loading="eager"
         />
         {/* Balanced Obsidian Overlay matching Quantum4U: protects copy legibility on left while keeping right watermark visual crisp and visible */}
-        <div className="absolute inset-0 bg-[#111113]/75" />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(17,17,19,0.75)" }} />
 
         {/* Ambient Yevqora Brand Watermark Emblem */}
         <div className="absolute right-[-2%] md:right-[5%] top-1/2 -translate-y-1/2 w-[280px] sm:w-[380px] md:w-[480px] aspect-square opacity-[0.08] pointer-events-none select-none z-0">
@@ -71,9 +71,11 @@ export const PageHeaderHero: React.FC<PageHeaderHeroProps> = ({
           )}
 
           {/* Category / Badge (Clean uppercase tracking matching Quantum4U) */}
-          <div className="font-['Onest',sans-serif] font-semibold text-[13px] md:text-[14px] tracking-[1.5px] uppercase text-white/40 mb-[20px]">
-            {badgeText}
-          </div>
+          {badgeText && (
+            <div className="font-['Onest',sans-serif] font-semibold text-[13px] md:text-[14px] tracking-[1.5px] uppercase text-white/40 mb-[20px]">
+              {badgeText}
+            </div>
+          )}
 
           {/* Main Title (Clean 50px bold) */}
           <h1 className="font-['Onest',sans-serif] font-semibold text-[26px] md:text-[50px] leading-[1.1] tracking-[-0.02em] text-white max-w-[800px] mb-[24px]">
