@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
         }`}
       >
         <div className="max-w-[1440px] mx-auto w-full px-[clamp(20px,4vw,64px)]">
-          {/* Desktop Grid Layout (Quantum4U 3-column architecture) */}
+          {/* Desktop Grid Layout (3-column architecture) */}
           <div className="hidden min-[1120px]:grid gap-x-[16px] grid-cols-[minmax(0,0.38fr)_minmax(0,1fr)_minmax(0,0.38fr)] grid-rows-[42px] max-w-full w-full items-center">
             
             {/* Column 1: Logo */}
@@ -67,7 +67,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
               </Link>
             </div>
 
-            {/* Column 2: Navigation Links (Centered, clean Quantum4U spacing) */}
+            {/* Column 2: Navigation Links (Centered, clean spacing) */}
             <div className="col-2 flex items-center justify-center justify-self-center row-1 self-center shrink-0">
               <nav className="flex items-center justify-center gap-1">
                 {navLinks.map((link) => {

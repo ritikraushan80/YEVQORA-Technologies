@@ -77,7 +77,7 @@ export const ServicesIndustriesSection: React.FC = () => {
   return (
     <section className="bg-brand-dark font-['Onest',sans-serif]">
       <div className="max-w-[1440px] mx-auto px-[clamp(16px,4vw,64px)] py-[clamp(58px,7.2vw,96px)]">
-        {/* Section Header (Quantum4U Style) */}
+        {/* Section Header */}
         <div className="max-w-[760px] mb-[clamp(40px,5vw,64px)]">
           <div className="font-semibold text-[12px] text-white/40 tracking-[2px] uppercase mb-[16px]">
             Industries
@@ -90,7 +90,7 @@ export const ServicesIndustriesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* 10 Industry Cards in a 5-Column Grid (Quantum4U Style) */}
+        {/* 10 Industry Cards in a 5-Column Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-[14px] md:gap-[18px]">
           {industries.map((item) => (
             <div

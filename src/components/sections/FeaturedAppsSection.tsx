@@ -97,7 +97,7 @@ export const FeaturedAppsSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Flagship Hero App Card (Quantum4U Style) */}
+        {/* Flagship Hero App Card */}
         <div className="w-full max-w-[1376px]">
           <div className="bg-brand-dark text-white flex flex-col md:flex-row items-stretch overflow-hidden rounded-[24px] md:rounded-[32px] relative md:aspect-[3/1] shadow-2xl border border-white/10 group">
             {/* Background Graphic with Vignette */}

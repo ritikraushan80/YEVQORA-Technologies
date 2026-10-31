@@ -14,10 +14,10 @@ import { AboutBuildCtaSection } from '@/components/sections/AboutBuildCtaSection
 export default function AboutPage() {
   return (
     <main className="min-h-screen relative overflow-x-hidden bg-transparent font-['Onest',sans-serif]">
-      {/* 1. Quantum4U Glass Floating Navigation */}
+      {/* 1. Glass Floating Navigation */}
       <Navbar />
 
-      {/* 2. Quantum4U About Header Hero matching https://quantum4u.in/about */}
+      {/* 2. About Header Hero */}
       <PageHeaderHero
         badgeText=""
         title="A young startup building AI-powered websites and mobile apps."
@@ -44,7 +44,7 @@ export default function AboutPage() {
       {/* 9. Ready to Build Something Great? High-Impact Dual CTA */}
       <AboutBuildCtaSection />
 
-      {/* 10. Quantum4U Signature Obsidian Footer */}
+      {/* 10. Signature Obsidian Footer */}
       <Footer />
     </main>
   );

@@ -93,7 +93,7 @@ export const FoundersSection: React.FC<FoundersSectionProps> = ({ hideHeader = f
           </div>
         )}
 
-        {/* Core Values Cards (Quantum4U Style) */}
+        {/* Core Values Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] mb-[64px]">
           {values.map((val, idx) => (
             <div

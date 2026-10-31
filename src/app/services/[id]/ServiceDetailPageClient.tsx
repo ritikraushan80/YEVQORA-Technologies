@@ -30,7 +30,7 @@ export function ServiceDetailPageClient({ params }: { params: { id: string } }) 
     <main className="min-h-screen relative overflow-x-hidden bg-white font-['Onest',sans-serif]">
       <Navbar />
 
-      {/* Quantum4U Header Hero */}
+      {/* Header Hero */}
       <PageHeaderHero
         badgeText={service.category || 'INDIVIDUAL DEEP-DIVE'}
         title={service.title}

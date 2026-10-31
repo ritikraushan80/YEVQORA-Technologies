@@ -34,7 +34,7 @@ export const AboutValuesSection: React.FC = () => {
   return (
     <section className="bg-transparent font-['Onest',sans-serif]">
       <div className="max-w-[1440px] mx-auto px-[clamp(16px,4vw,64px)] py-[38px] md:py-[80px]">
-        {/* Header (Quantum4U Style) */}
+        {/* Header */}
         <div className="text-center mb-[36px] md:mb-[60px]">
           <div className="font-semibold text-[12px] text-[#7d7d7d] tracking-[2px] uppercase mb-[16px]">
             Our Values

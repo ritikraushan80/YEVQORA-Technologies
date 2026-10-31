@@ -34,7 +34,7 @@ export const PageHeaderHero: React.FC<PageHeaderHeroProps> = ({
 }) => {
   return (
     <section style={{ backgroundColor: "#111113" }} className="relative overflow-hidden min-h-[50vh] flex items-center font-['Onest',sans-serif]">
-      {/* Full-bleed Background Image with Quantum4U Dark Obsidian Overlay */}
+      {/* Full-bleed Background Image with Dark Obsidian Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <img
           src={imageSrc}
@@ -42,7 +42,7 @@ export const PageHeaderHero: React.FC<PageHeaderHeroProps> = ({
           className="absolute inset-0 object-cover object-right md:object-center size-full"
           loading="eager"
         />
-        {/* Balanced Obsidian Overlay matching Quantum4U: protects copy legibility on left while keeping right watermark visual crisp and visible */}
+        {/* Balanced Obsidian Overlay: protects copy legibility on left while keeping right watermark visual crisp and visible */}
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(17,17,19,0.75)" }} />
 
         {/* Ambient Yevqora Brand Watermark Emblem */}
@@ -70,7 +70,7 @@ export const PageHeaderHero: React.FC<PageHeaderHeroProps> = ({
             </div>
           )}
 
-          {/* Category / Badge (Clean uppercase tracking matching Quantum4U) */}
+          {/* Category / Badge (Clean uppercase tracking) */}
           {badgeText && (
             <div className="font-['Onest',sans-serif] font-semibold text-[13px] md:text-[14px] tracking-[1.5px] uppercase text-white/40 mb-[20px]">
               {badgeText}
@@ -87,7 +87,7 @@ export const PageHeaderHero: React.FC<PageHeaderHeroProps> = ({
             {description}
           </p>
 
-          {/* Interactive Topic / Practice Pills with Accent Dots (Quantum4U Exact Style) */}
+          {/* Interactive Topic / Practice Pills with Accent Dots */}
           {chips && chips.length > 0 && (
             <div className="flex flex-wrap items-center gap-[10px] md:gap-[12px] mt-[32px] md:mt-[40px]">
               {chips.map((chip) => (

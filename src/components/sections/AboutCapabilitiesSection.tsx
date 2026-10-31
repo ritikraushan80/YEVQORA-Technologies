@@ -65,7 +65,7 @@ export const AboutCapabilitiesSection: React.FC = () => {
   return (
     <section className="bg-transparent border-t border-[#ececec] font-['Onest',sans-serif]">
       <div className="max-w-[1440px] mx-auto px-[clamp(16px,4vw,64px)] py-[clamp(58px,7.2vw,96px)]">
-        {/* Section Header (Quantum4U Style) */}
+        {/* Section Header */}
         <div className="max-w-[760px] mb-[clamp(40px,5vw,64px)]">
           <div className="font-semibold text-[12px] text-[#7d7d7d] tracking-[2px] uppercase mb-[16px]">
             Capabilities
@@ -75,7 +75,7 @@ export const AboutCapabilitiesSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* 4-Column Technical Grid (Quantum4U Style) */}
+        {/* 4-Column Technical Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[16px] md:gap-[20px]">
           {capabilities.map((item) => (
             <div

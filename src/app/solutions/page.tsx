@@ -13,7 +13,7 @@ export default function SolutionsPage() {
       {/* Navigation */}
       <Navbar />
 
-      {/* Quantum4U Header Hero */}
+      {/* Header Hero */}
       <PageHeaderHero
         badgeText="Our Apps & Packaged Solutions"
         title="Packaged Technology Platforms Built to Accelerate Growth"

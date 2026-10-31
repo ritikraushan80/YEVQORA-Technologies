@@ -72,7 +72,7 @@ export const TimelineSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Call to Action Banner (Quantum4U Style) */}
+        {/* Call to Action Banner */}
         <div className="mt-[56px] rounded-[28px] bg-brand-dark text-white p-[36px] sm:p-[48px] flex flex-col md:flex-row items-center justify-between gap-[28px] shadow-2xl border border-white/10 relative overflow-hidden">
           <div className="relative z-10 max-w-2xl text-center md:text-left">
             <h3 className="font-bold text-[24px] sm:text-[30px] text-white m-0 leading-tight">

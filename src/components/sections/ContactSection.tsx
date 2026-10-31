@@ -87,7 +87,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ hideHeader = fal
           </div>
         )}
 
-        {/* Split Quantum4U Card */}
+        {/* Split Card */}
         <div className="flex flex-col md:flex-row items-stretch w-full overflow-hidden rounded-[24px] md:rounded-[32px] shadow-[0px_10px_60px_rgba(0,0,0,0.12)] border border-[#eee] dark:border-zinc-800">
           
           {/* Left Column: Deep Obsidian Info Panel */}

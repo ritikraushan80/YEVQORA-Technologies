@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
       className="bg-brand-dark w-full text-white relative z-30 overflow-hidden"
     >
       <div className="max-w-[1440px] mx-auto px-[clamp(16px,4vw,64px)] pt-[48px] md:pt-[64px] lg:pt-[80px] pb-[0px]">
-        {/* Main Footer Flex / Grid Matching Quantum4U */}
+        {/* Main Footer Flex / Grid */}
         <div className="flex flex-col lg:flex-row gap-[36px] md:gap-[48px] lg:gap-[80px]">
           
           {/* Column 1: Brand Info & Description */}

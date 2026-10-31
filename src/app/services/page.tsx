@@ -45,10 +45,10 @@ const serviceChips: HeroChip[] = [
 export default function ServicesPage() {
   return (
     <main className="min-h-screen relative overflow-x-hidden bg-transparent font-['Onest',sans-serif]">
-      {/* 1. Quantum4U Glass Floating Navigation */}
+      {/* 1. Glass Floating Navigation */}
       <Navbar />
 
-      {/* 2. Quantum4U Header Hero matching https://quantum4u.in/services */}
+      {/* 2. Header Hero */}
       <PageHeaderHero
         badgeText=""
         title="Engineering and design services for modern teams."
@@ -70,7 +70,7 @@ export default function ServicesPage() {
       {/* 6. "Ready to get started?" High-Impact Conversion CTA */}
       <ServicesCtaSection />
 
-      {/* 7. Quantum4U Signature Obsidian Footer */}
+      {/* 7. Signature Obsidian Footer */}
       <Footer />
     </main>
   );

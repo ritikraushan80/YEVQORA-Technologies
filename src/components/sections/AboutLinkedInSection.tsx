@@ -73,7 +73,7 @@ export const AboutLinkedInSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: LinkedIn Preview Card (Quantum4U Style) */}
+          {/* Right Column: LinkedIn Preview Card */}
           <div>
             <a
               href={LINKEDIN_URL}

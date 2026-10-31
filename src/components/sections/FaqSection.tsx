@@ -61,7 +61,7 @@ export const FaqSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Quantum4U Style Accordion List */}
+        {/* Accordion List */}
         <div className="space-y-[14px]">
           {faqData.map((faq) => {
             const isOpen = openId === faq.id;

@@ -100,7 +100,7 @@ export const TrustLogosSection: React.FC = () => {
     <section id="apps-ticker" className="relative w-full bg-[#000000] border-b border-white/[0.08] overflow-hidden">
       <div className="flex flex-col gap-[28px] pb-[52px] pt-[40px] relative w-full">
         
-        {/* Quantum4U Header */}
+        {/* Header */}
         <div className="flex flex-col font-['Onest',sans-serif] font-medium justify-center text-[20px] md:text-[28px] text-center text-white w-full px-[16px]">
           <p className="leading-[32px] md:leading-[38px] m-0">
             Digital platforms used by{' '}

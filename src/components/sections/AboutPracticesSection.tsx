@@ -190,7 +190,7 @@ export const AboutPracticesSection: React.FC = () => {
   return (
     <section className="bg-transparent font-['Onest',sans-serif]">
       <div className="max-w-[1440px] mx-auto px-[clamp(16px,4vw,64px)] pt-[clamp(72px,9vw,120px)] pb-[clamp(40px,6vw,80px)]">
-        {/* Section Header (Quantum4U Style) */}
+        {/* Section Header */}
         <div className="max-w-[760px] mb-[clamp(40px,6vw,72px)]">
           <div className="font-semibold text-[12px] text-[#7d7d7d] tracking-[2px] uppercase mb-[16px]">
             What We Build
@@ -203,7 +203,7 @@ export const AboutPracticesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Alternating Full-Bleed 12-Column Editorial Showcase (Quantum4U Style) */}
+        {/* Alternating Full-Bleed 12-Column Editorial Showcase */}
         <div className="flex flex-col">
           {servicesList.map((service, index) => {
             const isOdd = index % 2 === 1;

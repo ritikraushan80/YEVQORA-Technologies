@@ -45,7 +45,7 @@ export const AboutJourneySection: React.FC = () => {
   return (
     <section className="bg-transparent font-['Onest',sans-serif]">
       <div className="max-w-[1440px] mx-auto px-[clamp(16px,4vw,64px)] py-[38px] md:py-[80px]">
-        {/* Header (Quantum4U Style) */}
+        {/* Header */}
         <div className="text-center mb-[36px] md:mb-[60px]">
           <div className="font-semibold text-[12px] text-[#7d7d7d] tracking-[2px] uppercase mb-[16px]">
             Our Journey
@@ -55,7 +55,7 @@ export const AboutJourneySection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Vertical Timeline (Quantum4U Style) */}
+        {/* Vertical Timeline */}
         <div className="max-w-[640px] mx-auto">
           {milestonesList.map((m, idx) => {
             const isLast = idx === milestonesList.length - 1;

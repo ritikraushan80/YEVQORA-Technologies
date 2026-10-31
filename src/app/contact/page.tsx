@@ -13,7 +13,7 @@ export default function ContactPage() {
       {/* Navigation */}
       <Navbar />
 
-      {/* Quantum4U Header Hero */}
+      {/* Header Hero */}
       <PageHeaderHero
         badgeText=""
         title="Let's Build Your Next Intelligent Product"
@@ -22,7 +22,7 @@ export default function ContactPage() {
         imageAlt="Two people having a friendly business conversation across a table"
       />
 
-      {/* Split Quantum4U Contact Card (Obsidian Left + Light Right Form) */}
+      {/* Split Contact Card (Obsidian Left + Light Right Form) */}
       <ContactSection hideHeader={true} />
 
       {/* Frequently Asked Questions */}

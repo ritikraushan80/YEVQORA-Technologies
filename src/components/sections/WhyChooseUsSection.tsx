@@ -200,7 +200,7 @@ export const WhyChooseUsSection: React.FC = () => {
                 />
               </div>
 
-              {/* Floating Quantum4U Glass Badge */}
+              {/* Floating Glass Badge */}
               <div className="absolute bg-white/15 backdrop-blur-xl backdrop-saturate-150 border border-white/40 shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_12px_36px_rgba(0,0,0,0.35)] inline-flex flex-col items-start justify-end left-[8%] md:left-[12%] bottom-[8%] md:bottom-[10%] px-[20px] py-[12px] md:px-[26px] md:py-[16px] rounded-[16px] z-10">
                 <div className="font-['Onest',sans-serif] font-bold text-[15px] md:text-[19px] text-white tracking-tight flex items-center gap-[10px]">
                   <span className="size-[28px] md:size-[34px] shrink-0 rounded-full bg-gradient-to-br from-[#2563eb] via-[#0ea5e9] to-[#2dd4bf] flex items-center justify-center shadow-[0_4px_14px_rgba(14,165,233,0.55),inset_0_1px_0_rgba(255,255,255,0.45)] ring-1 ring-white/40">

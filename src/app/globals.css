@@ -51,7 +51,7 @@
   }
 }
 
-/* Quantum4U Signature Animations */
+/* Signature Animations */
 @keyframes heroServiceProgress {
   0% {
     width: 0%;
@@ -132,7 +132,7 @@
   animation: heroContentFadeUp 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Quantum4U Interactive Pill Button Styling */
+/* Interactive Pill Button Styling */
 .btn-pill {
   display: inline-flex;
   align-items: center;
