@@ -37,7 +37,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: 'Misha Kumari',
-    role: 'Senior FullStack Developer',
+    role: 'Principal Software Engineer',
     bio: 'Building web and mobile applications with expertise in frontend, backend, and UI/UX design to deliver seamless digital experiences.',
     image:
       '/images/team/misha.jpg',
