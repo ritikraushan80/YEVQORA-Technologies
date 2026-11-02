@@ -13,16 +13,16 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: 'Ritik Raushan',
-    role: 'Chief Engineer',
-    bio: 'Leads our engineering and technical direction, from architecture to delivery, so every product is fast, reliable and built to last.',
+    role: 'Engineering Manager',
+    bio: 'Leading technical strategy, system architecture, and engineering excellence to deliver scalable, secure, and high-performance products.',
     image:
       '/images/team/ritik.jpg',
     linkedin: 'https://www.linkedin.com/in/ritik-raushan-4250741b6/',
   },
   {
     name: 'MD Idris',
-    role: 'Staff Engineer',
-    bio: 'A senior, hands-on engineer who tackles complex technical problems and keeps code quality and standards high across every project.',
+    role: 'Infrastructure Lead',
+    bio: 'Managing cloud infrastructure, DevOps, and deployment automation to ensure secure, reliable, and scalable technology systems.',
     image:
       '/images/team/idris.jpg',
     linkedin: 'https://www.linkedin.com/in/md-idris-9111b1210/',
@@ -30,7 +30,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Nikhil Baisoya',
     role: 'Lead AI Engineer',
-    bio: 'Designs and builds the AI behind our products, from chatbots and automation to smart analytics that make apps more useful.',
+    bio: 'Developing AI models, intelligent agents, chatbots, and automation solutions to deliver scalable, innovative, and data-driven products.',
     image:
       '/images/team/nikhil.jpg',
     linkedin: 'https://www.linkedin.com/in/nikhil-baisoya-819a661a8/',
@@ -38,7 +38,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Misha Kumari',
     role: 'Senior FullStack Developer',
-    bio: 'Builds complete web and mobile experiences, connecting clean, responsive interfaces to fast and secure back ends.',
+    bio: 'Building web and mobile applications with expertise in frontend, backend, and UI/UX design to deliver seamless digital experiences.',
     image:
       '/images/team/misha.jpg',
     linkedin: 'https://www.linkedin.com/in/misha-kumari-57721420a/',

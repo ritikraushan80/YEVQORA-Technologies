@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { MessageCircle, X, Send, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send } from 'lucide-react';
 
 interface ChatMessage {
   id: number;
@@ -249,8 +249,8 @@ export const ChatWidget: React.FC = () => {
       >
         {/* Header */}
         <div className="relative flex items-center gap-[12px] px-[18px] py-[16px] bg-gradient-to-br from-indigo-600 via-violet-600 to-sky-500 text-white">
-          <div className="size-[40px] rounded-full bg-white/20 border border-white/30 flex items-center justify-center">
-            <Sparkles className="w-5 h-5" />
+          <div className="size-[44px] shrink-0 rounded-full bg-white shadow-[0_4px_14px_rgba(0,0,0,0.25)] ring-2 ring-white/40 flex items-center justify-center p-[8px]">
+            <img src="/images/yevqora-mark.png" alt="Yevqora" className="size-full object-contain" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="font-semibold text-[15px] leading-tight">Yevqora Assistant</div>
