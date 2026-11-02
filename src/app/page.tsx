@@ -6,7 +6,7 @@ import { HeroSection } from '@/components/sections/HeroSection';
 import { CapabilitiesSection } from '@/components/sections/CapabilitiesSection';
 import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
-import { CaseStudySection } from '@/components/sections/CaseStudySection';
+// import { CaseStudySection } from '@/components/sections/CaseStudySection';
 import { ContactSection } from '@/components/sections/ContactSection';
 import { Footer } from '@/components/layout/Footer';
 

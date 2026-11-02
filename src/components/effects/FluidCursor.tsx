@@ -13,7 +13,7 @@ export const FluidCursor: React.FC = () => {
     const config = {
       SIM_RESOLUTION: 128,
       DYE_RESOLUTION: 1024,
-      DENSITY_DISSIPATION: 0.6, // Slower fade for smooth, lingering fluid ribbon trails
+      DENSITY_DISSIPATION: 1.3, // Slower fade for smooth, lingering fluid ribbon trails
       VELOCITY_DISSIPATION: 2.5, // Fluid momentum dissipation
       PRESSURE: 0.1,
       PRESSURE_ITERATIONS: 20,
@@ -833,12 +833,12 @@ export const FluidCursor: React.FC = () => {
     }
 
     function generateColor(): { r: number; g: number; b: number } {
-      const c = HSVtoRGB(Math.random(), 1.0, 1.0);
-      // Vivid ink tone calibrated for white and light backgrounds
+      const c = HSVtoRGB(Math.random(), 0.45, 1.0);
+      // Soft pastel tone so the trail stays subtle and does not distract
       return {
-        r: c.r * 0.28,
-        g: c.g * 0.28,
-        b: c.b * 0.28,
+        r: c.r * 0.10,
+        g: c.g * 0.10,
+        b: c.b * 0.10,
       };
     }
 
@@ -1122,9 +1122,9 @@ export const FluidCursor: React.FC = () => {
 
       // Burst of colorful fluid splat on click
       const burstColor = generateColor();
-      burstColor.r *= 8;
-      burstColor.g *= 8;
-      burstColor.b *= 8;
+      burstColor.r *= 4;
+      burstColor.g *= 4;
+      burstColor.b *= 4;
       const randX = 12 * (Math.random() - 0.5);
       const randY = 32 * (Math.random() - 0.5);
       splat(p.texcoordX, p.texcoordY, randX, randY, burstColor);

@@ -5,7 +5,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { PageHeaderHero, HeroChip } from '@/components/common/PageHeaderHero';
 import { ServicesPracticesSection } from '@/components/sections/ServicesPracticesSection';
-import { ServicesCapabilitiesSection } from '@/components/sections/ServicesCapabilitiesSection';
+// import { ServicesCapabilitiesSection } from '@/components/sections/ServicesCapabilitiesSection';
 import { ServicesIndustriesSection } from '@/components/sections/ServicesIndustriesSection';
 import { ServicesCtaSection } from '@/components/sections/ServicesCtaSection';
 
@@ -62,7 +62,7 @@ export default function ServicesPage() {
       <ServicesPracticesSection />
 
       {/* 4. "Capabilities" - "We are perfect in" 4-Column Technical Grid */}
-      <ServicesCapabilitiesSection />
+      {/* <ServicesCapabilitiesSection /> */}
 
       {/* 5. "Industries" - "Services that help you grow." Dark Obsidian 5-Column Grid */}
       <ServicesIndustriesSection />

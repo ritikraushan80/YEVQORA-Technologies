@@ -3,6 +3,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/theme/ThemeContext';
 import { FluidCursor } from '@/components/effects/FluidCursor';
 import { FloatingSocialBar } from '@/components/common/SocialLinks';
+import { ChatWidget } from '@/components/common/ChatWidget';
 import { SITE_URL, SITE_NAME, OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -90,6 +91,7 @@ export default function RootLayout({
         <ThemeProvider>
           <FluidCursor />
           <FloatingSocialBar />
+          <ChatWidget />
           <div id="app-root-content" className="relative z-10 min-h-screen bg-transparent">
             {children}
           </div>
